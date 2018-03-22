@@ -1,0 +1,30 @@
+<import src="../common/load.wxml"/>
+<view class="page">
+    <view class="tab">
+        <view wx:key wx:for="{{arr}}" data-times="{{item.times}}"
+              data-num="{{item.num}}" catchtap="tapTab" data-id="{{index}}"
+              class="tab_single {{tabNum==index?'tab_active':''}}"
+        >{{item.names}}
+        </view>
+    </view>
+    <view class="tabCont">
+                <navigator hover-class="none" url="../bookinfo/bookinfo?book_id={{item.book_id}}" class="tabCont_single" wx:key wx:for="{{arrCont}}">
+                    <view class="tabCont_single_title ellipsis">{{item.book_title}}</view>
+                    <view class="tabCont_single_author ellipsis">{{item.pen_name}}</view>
+                    <view catchtap="addBook" data-is_collection="{{item.is_collection}}" data-index="{{index}}" data-book_id="{{item.book_id}}" class="tabCont_single_shouCang {{item.is_collection==0?'shouCang_active':''}} ">{{item.is_collection==0?'收藏':'已收藏'}}</view>
+
+                    <view class="tabCont_single_face">
+                        <image wx:if="{{item.logo_hb}}" src="{{item.logo_hb}}" class="tabCont_single_face_pic"></image>
+                        <image wx:else src="../../images/1.jpg" class="tabCont_single_face_pic"></image>
+                        <view class="tabCont_single_face_intro ellipsis">{{item.intro}}</view>
+                    </view>
+                    <view class="tabCont_single_look">
+                        <image class="tabCont_single_look_pic" src="../../images/eye.png"></image>
+                        <view class="tabCont_single_look_num">{{item.total_click_num}}</view>
+                    </view>
+                    <text class="tabCont_single_update ellipsis">更新至{{item.count}}话 {{item.last_chapter_title}}</text>
+                </navigator>
+                <template wx:if="{{show}}" is="load"/>
+    </view>
+    <view wx:if="{{isGengXin}}" class="noGengXin">还没有更新哦</view>
+</view>

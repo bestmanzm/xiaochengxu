@@ -1,0 +1,78 @@
+<view class="page">
+    <view class="banner">
+        <image class="banner_Out" src="{{data.cover_url}}"></image>
+        <image class="banner_inner" src="{{data.cover_url}}"></image>
+    </view>
+    <view class="mes">
+        <view class="mes_single ellipsis">
+            <image class="mes_single_pic" src="../../images/info_bg1.png"></image>
+            <view class="mes_single_font">作者：{{data.author_name}}</view>
+        </view>
+        <view class="mes_single ellipsis">
+            <image class="mes_single_pic" src="../../images/info_bg2.png"></image>
+            <view class="mes_single_font">演播：{{data.read_name}}</view>
+        </view>
+        <view class="mes_single ellipsis">
+            <image class="mes_single_pic" src="../../images/info_bg3.png"></image>
+            <view class="mes_single_font">集数：{{data.chapter_count}}集</view>
+        </view>
+        <view class="mes_single ellipsis">
+            <image class="mes_single_pic" src="../../images/info_bg4.png"></image>
+            <view class="mes_single_font">状态：{{data.writing_process==0?'连载':'完结'}}</view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="intro">
+        <view class="intro_cont">{{data.book_intro}}</view>
+        <!--<view class="add">-->
+            <!--<view class="add_l ellipsis">上次已听到：第4章dfsadsfadsfadsf</view>-->
+            <!--<view class="add_r">-->
+                <!--&lt;!&ndash;<image class="addPic" src="../../images/sc_bg2.png"></image>&ndash;&gt;-->
+                <!--&lt;!&ndash;<view class="add_font">加入收藏</view>&ndash;&gt;-->
+                <!--<image class="addPic" src="../../images/sc_bg1.png"></image>-->
+                <!--<view class="add_font" style="color: #cccccc">取消收藏</view>-->
+            <!--</view>-->
+        <!--</view>-->
+    </view>
+    <view class="line"></view>
+
+</view>
+<view class="play">
+    <view class="play_cont ellipsis">
+        <view class="author">{{book_title}}</view>
+        <view class="title">第{{order}}章:{{title}}</view>
+    </view>
+    <view class="play_line">
+        <view class="play_line_l">{{m_l}}:{{s_l}}</view>
+
+        <view class="play_line_m">
+            <view class="div" style="width:{{wid}};">
+                <view class="circle"></view>
+            </view>
+        </view>
+
+        <view class="play_line_r">{{m_r}}:{{s_r}}</view>
+    </view>
+    <slider disabled="{{flag_next}}" min="0" max="100" value="{{value}}" class="slider" bindchange="sliderChange" step="5"/>
+</view>
+<view class="bot">
+    <navigator  url="../YouShengMuLu/YouShengMuLu?sound_book_id={{sound_book_id}}" class="muLu">
+        <image class="mulu_pic" src="../../images/mulu_next.png"></image>
+        <view  class="mulu_font">目录</view>
+    </navigator>
+    <!--<view class="dingShi">-->
+        <!--<image class="dingShi_pic" src="../../images/time_bg1.png"></image>-->
+        <!--<view class="dingShi_font">定时关闭</view>-->
+    <!--</view>-->
+    <view class="bot_cont">
+        <image  wx:if="{{order-1==0?true:false}}" class="bot_cont_l" src="../../images/next_bg1.png"></image>
+        <image data-order="{{order-1}}" wx:if="{{order-1!=0?true:false}}" bindtap="askData" class="bot_cont_l" src="../../images/next_bg1.png"></image>
+
+        <image data-order="{{order}}" wx:if="{{flag}}" bindtap="audioPlay" class="bot_cont_m" src="../../images/play_bg1.png"></image>
+        <image data-order="{{order}}" wx:if="{{!flag}}" bindtap="audioPause" class="bot_cont_m" src="../../images/pause_bg1.png"></image>
+
+        <image  wx:if="{{order+1>chapter_count?true:false}}" class="bot_cont_r" src="../../images/play_r.png"></image>
+        <image data-order="{{order+1}}" wx:if="{{}}" wx:if="{{order+1<=chapter_count?true:false}}" bindtap="askData"  class="bot_cont_r" src="../../images/play_r.png"></image>
+    </view>
+    <audio bindended="end" bindtimeupdate="timeUpdate" class="audio"  src="{{src}}" id="myAudio"></audio>
+</view>

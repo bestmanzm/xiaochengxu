@@ -1,0 +1,113 @@
+.page {
+  width: 100%;
+}
+.page .tabOut {
+  position: fixed;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  z-index: 11;
+}
+.page .tabOut .tab {
+  margin: 0 auto;
+  width: 710rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  color: #666666;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.page .tabOut .tab .tab_single {
+  display: inline-block;
+  padding: 0 30rpx;
+}
+.page .tabOut .tab .tab_single:nth-child(1) {
+  padding: 0 30rpx 0 0;
+}
+.page .tabOut .tab .colorActive {
+  color: #4FD1E4;
+}
+.page .list {
+  position: absolute;
+  top: 90rpx;
+  bottom: 0;
+  width: 100%;
+}
+.page .list .list_single {
+  position: relative;
+  width: 100%;
+  height: 580rpx;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 9rpx solid #f7f7f7;
+}
+.page .list .list_single .list_single_face {
+  width: 750rpx;
+  height: 450rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page .list .list_single .list_single_type {
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  width: 74rpx;
+  height: 44rpx;
+  color: #ffffff;
+  font-size: 22rpx;
+  line-height: 44rpx;
+  background: #4fd1e4;
+  text-align: center;
+}
+.page .list .list_single .list_single_intro {
+  color: #EA1E28;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  left: 100rpx;
+  top: 388rpx;
+  width: 630rpx;
+  overflow: hidden;
+  height: 30rpx;
+  width: 620rpx;
+  text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px 1px 0px #fff, 0px -1px 0px #fff;
+}
+.page .list .list_single .list_single_title {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  top: 470rpx;
+  left: 20rpx;
+  color: #222222;
+  width: 450rpx;
+}
+.page .list .list_single .list_single_look {
+  position: absolute;
+  right: 20rpx;
+  top: 470rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+.page .list .list_single .list_single_look .list_single_look_pic {
+  width: 24rpx;
+  height: 18rpx;
+  display: inline-block;
+}
+.page .list .list_single .list_single_look .list_single_look_num {
+  font-size: 26rpx;
+  color: #bfbfbf;
+  display: inline-block;
+  margin-left: 6rpx;
+}
+.page .list .list_single .list_single_update {
+  position: absolute;
+  left: 20rpx;
+  top: 520rpx;
+  color: #aaaaaa;
+  font-size: 24rpx;
+  line-height: 26rpx;
+  width: 700rpx;
+}

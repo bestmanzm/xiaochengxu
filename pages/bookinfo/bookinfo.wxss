@@ -1,0 +1,171 @@
+/* pages/bookinfo/bookinfo.wxss */
+.bookinfoRoot{
+  padding-bottom: 110rpx;
+}
+.bookBox{
+  height: 440rpx;
+  position: relative;
+  overflow: hidden;
+}
+.bookBox .bookimg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.bookBox .bookinfo{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 218rpx;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom,rgba(51,51,51,0),rgba(51,51,51,.6));
+  padding: 85rpx 20rpx 0;
+  font-size: 26rpx;
+  line-height: 46rpx;
+  color: #fff;
+}
+.bookBox .bookinfo .bookname{
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+.bookBox .bookinfo .infoBox{
+  position: relative;
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.bookBox .bookinfo .infoBox .eyeimg{
+  display: inline-block;
+  width: 24rpx;
+  height: 15rpx;
+  vertical-align: middle;
+  margin: 0 10rpx 0 16rpx;
+}
+.bookBox .bookinfo .infoBox .types{
+  font-size: 24rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+.bookdetail{
+  padding: 40rpx 20rpx;
+  position: relative;
+}
+.bookdetail.maxH text{
+  height: 144rpx;
+}
+.bookdetail.maxH .detailImg{transform: rotate(0deg);}
+.bookdetail text{
+  font-size: 28rpx;
+  line-height: 48rpx;
+  display: block;
+  overflow: hidden;
+}
+.bookdetail .detailImg{
+  position: absolute;
+  right: 20rpx;
+  bottom: 24rpx;
+  width: 24rpx;
+  height: 14rpx;
+  background-color: #fff;
+  transform: rotate(180deg);
+}
+.btnsBox{
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 50;
+  left: 0;
+  bottom: 0;
+  height: 110rpx;
+  font-size: 34rpx;
+  color: #999;
+  text-align: center;
+}
+.btnsBox image{
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+.btnsBox .btn{
+  float: left;
+  width: 50%;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-top: 1px solid #ddd;
+}
+.btnsBox .btn.read_btn{
+  background-color: #4FD1E4;
+  border-top-color: #4FD1E4;
+  color: #fff;
+}
+.newArticle{
+  padding: 32rpx 20rpx 0;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  position: relative;
+  color: #E34848;
+}
+.newArticle .wj{
+  color: #F2AE2A;
+}
+.newArticle .wjtime{
+  color: #aaa;
+}
+.newArticle .a_btn{
+  color: #999;
+  position: absolute;
+  right: 20rpx;
+  top: 32rpx;
+}
+.newArticle .a_btn:nth-last-child(2){
+  right: 120rpx;
+}
+.newArticle .a_btn.active{
+  color: #4FD1E4;
+}
+.muluBox.items .item{
+  height: 110rpx;
+  line-height: 110rpx;
+  position: relative;
+  margin: 0 20rpx;
+  font-size: 30rpx;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+.muluBox.items .item.dis{
+  color: #999999;
+}
+.muluBox.items .item.active{
+  color: #4FD1E4;
+}
+.muluBox.items .item .datetime{
+  position: absolute;
+  right: 20rpx;
+  font-size: 20rpx;
+  color: #bbb;
+  top: 0;
+}
+.muluBox.items .item .linfo{
+  padding-right: 292rpx;
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+}
+.muluBox.items .item .linfo image{
+  width: 25rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 40rpx;
+}
+.muluBox.items .item .linfo image:nth-child(4){right: 160rpx;}
+.muluBox.items .item .linfo image:nth-child(3){right: 204rpx;}
+.muluBox.items .item .linfo image:nth-child(2){right: 248rpx;}

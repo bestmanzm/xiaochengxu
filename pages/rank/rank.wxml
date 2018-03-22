@@ -1,0 +1,147 @@
+<view class="page">
+    <view class="tab">
+        <view data-id="0" catchtap="tapTab" class="tab_single {{tabNum==0?'tab_singleActive':''}}">点击榜</view>
+        <view data-id="1" catchtap="tapTab" class="tab_single {{tabNum==1?'tab_singleActive':''}}">付费榜</view>
+        <view data-id="2" catchtap="tapTab" class="tab_single {{tabNum==2?'tab_singleActive':''}}">收藏榜</view>
+        <view wx:if="{{bangName==2}}" data-id="3" catchtap="tapTab" class="tab_singleSpecial">本周 ▼</view>
+        <view wx:if="{{bangName==1}}" data-id="3" catchtap="tapTab" class="tab_singleSpecial">月榜 ▼</view>
+        <view wx:if="{{bangName==0}}" data-id="3" catchtap="tapTab" class="tab_singleSpecial">总榜▼</view>
+    </view>
+    <view class="cont">
+        <!--前三名-->
+        <view class="cont_top">
+            <image src="../../images/rank_bgc.png" class="cont_top_bgc"></image>
+            <view class="twoThr">
+                <!--第一名-->
+                <navigator class="twoThr_one" data-book_id="{{arr[0].book_id}}"
+                           url="../bookinfo/bookinfo?book_id={{arr[0].book_id}}">
+                    <image class="twoThr_two_face" src="{{arr[0].logo}}"></image>
+                    <view class="twoThr_two_title ellipsis">{{arr[0].book_title}}</view>
+                    <view class="twoThr_two_title_look">
+                        <image wx:if="{{tabNum==0}}" class="twoThr_two_title_look_picOne"
+                               src="../../images/redEye.png"></image>
+                        <image wx:if="{{tabNum==1}}" class="twoThr_two_title_look_picTwo"
+                               src="../../images/money.png"></image>
+                        <image wx:if="{{tabNum==2}}" class="twoThr_two_title_look_picThr"
+                               src="../../images/heart.png"></image>
+                        <view wx:if="{{tabNum==0}}" class="twoThr_two_title_look_num redColor">
+                            {{arr[0].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==1}}" class="twoThr_two_title_look_num goldColor">
+                            {{arr[0].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==2}}" class="twoThr_two_title_look_num blueColor">
+                            {{arr[0].total_click_num}}
+                        </view>
+                    </view>
+                    <view class="box">
+                        <image class="box_pic" src="../../images/diYi.png"></image>
+                        <view class="box_num">1</view>
+                    </view>
+                    <image class="paihang_l" src="../../images/paihang_l.jpg"></image>
+                    <image class="paihang_r" src="../../images/paihang_r.jpg"></image>
+                </navigator>
+                <!--第二名-->
+                <navigator class="twoThr_two" data-book_id="{{arr[1].book_id}}"
+                           url="../bookinfo/bookinfo?book_id={{arr[1].book_id}}">
+                    <image class="twoThr_two_face" src="{{arr[1].logo}}"></image>
+                    <view class="twoThr_two_title ellipsis">{{arr[1].book_title}}</view>
+                    <view class="twoThr_two_title_look">
+                        <image wx:if="{{tabNum==0}}" class="twoThr_two_title_look_picOne"
+                               src="../../images/redEye.png"></image>
+                        <image wx:if="{{tabNum==1}}" class="twoThr_two_title_look_picTwo"
+                               src="../../images/money.png"></image>
+                        <image wx:if="{{tabNum==2}}" class="twoThr_two_title_look_picThr"
+                               src="../../images/heart.png"></image>
+                        <view wx:if="{{tabNum==0}}" class="twoThr_two_title_look_num redColor">
+                            {{arr[1].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==1}}" class="twoThr_two_title_look_num goldColor">
+                            {{arr[1].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==2}}" class="twoThr_two_title_look_num blueColor">
+                            {{arr[1].total_click_num}}
+                        </view>
+                    </view>
+                    <view class="box">
+                        <image class="box_pic" src="../../images/diEr.png"></image>
+                        <view class="box_num">2</view>
+                    </view>
+                </navigator>
+                <!--第三名-->
+                <navigator class="twoThr_thr" data-book_id="{{arr[2].book_id}}"
+                           url="../bookinfo/bookinfo?book_id={{arr[2].book_id}}">
+                    <image class="twoThr_two_face" src="{{arr[2].logo}}"></image>
+                    <view class="twoThr_two_title ellipsis">{{arr[2].book_title}}</view>
+                    <view class="twoThr_two_title_look">
+                        <image wx:if="{{tabNum==0}}" class="twoThr_two_title_look_picOne"
+                               src="../../images/redEye.png"></image>
+                        <image wx:if="{{tabNum==1}}" class="twoThr_two_title_look_picTwo"
+                               src="../../images/money.png"></image>
+                        <image wx:if="{{tabNum==2}}" class="twoThr_two_title_look_picThr"
+                               src="../../images/heart.png"></image>
+                        <view wx:if="{{tabNum==0}}" class="twoThr_two_title_look_num redColor">
+                            {{arr[2].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==1}}" class="twoThr_two_title_look_num goldColor">
+                            {{arr[2].total_click_num}}
+                        </view>
+                        <view wx:if="{{tabNum==2}}" class="twoThr_two_title_look_num blueColor">
+                            {{arr[2].total_click_num}}
+                        </view>
+                    </view>
+                    <view class="box">
+                        <image class="box_pic" src="../../images/diSan.png"></image>
+                        <view class="box_num">3</view>
+                    </view>
+                </navigator>
+
+            </view>
+        </view>
+
+
+        <!--列表项-->
+        <view class="list">
+            <navigator class="list_single" wx:key wx:for="{{arr}}" wx:if="{{index>2}}" data-book_id="{{item.book_id}}"
+                       url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="list_single_face" src="{{item.logo}}"></image>
+                <view class="list_single_title ellipsis">{{item.book_title}}</view>
+                <view class="list_single_look">
+                    <image wx:if="{{tabNum==0}}" class="twoThr_two_title_look_picOne"
+                           src="../../images/redEye.png"></image>
+                    <image wx:if="{{tabNum==1}}" class="twoThr_two_title_look_picTwo"
+                           src="../../images/money.png"></image>
+                    <image wx:if="{{tabNum==2}}" class="twoThr_two_title_look_picThr"
+                           src="../../images/heart.png"></image>
+                    <view wx:if="{{tabNum==0}}" class="list_single_look_num redColor">{{item.total_click_num}}</view>
+                    <view wx:if="{{tabNum==1}}" class="list_single_look_num goldColor">{{item.total_click_num}}</view>
+                    <view wx:if="{{tabNum==2}}" class="list_single_look_num blueColor">{{item.total_click_num}}</view>
+                </view>
+                <view class="list_single_type">
+                    <view class="list_single_type_single">{{item.tag[0]}}</view>
+                    <view class="list_single_type_single">{{item.tag[1]}}</view>
+                    <view class="list_single_type_single">{{item.tag[2]}}</view>
+                </view>
+                <view class="list_single_intro ellipsis">{{item.intro}}</view>
+            </navigator>
+            <view class="list_foot">已到底部，没有了哦</view>
+        </view>
+
+
+    </view>
+
+
+    <view catchtap="close" class="allBangCover" wx:if="{{zongBang}}">
+        <view class="allBangCover_cont">
+            <view data-bangName="2" catchtap="tapBang" hover-class="allBangCover_cont_singleActive"
+                  class="allBangCover_cont_single">本周
+            </view>
+            <view data-bangName="1" catchtap="tapBang" hover-class="allBangCover_cont_singleActive"
+                  class="allBangCover_cont_single">月榜
+            </view>
+            <view data-bangName="0" catchtap="tapBang" hover-class="allBangCover_cont_singleActive"
+                  class="allBangCover_cont_single">总榜
+            </view>
+        </view>
+    </view>
+</view>

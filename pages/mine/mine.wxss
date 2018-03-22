@@ -1,0 +1,112 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+.page .header {
+  width: 100%;
+  height: 450rpx;
+  position: relative;
+}
+.page .header .header_bgc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450rpx;
+}
+.page .header .header_head {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50% 50%;
+  background-color: pink;
+  overflow: hidden;
+  position: absolute;
+  top: 87rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page .header .header_head .header_head_pic {
+  width: 140rpx;
+  height: 140rpx;
+}
+.page .header .header_name {
+  font-size: 28rpx;
+  position: absolute;
+  top: 241rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+.page .header .header_recharge {
+  width: 150rpx;
+  height: 60rpx;
+  background: #ffffff;
+  border-radius: 30px ;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 304rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #222222;
+  font-size: 26rpx;
+}
+.page .single {
+  width: 677rpx;
+  margin: 0 auto;
+  height: 120rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.page .single .single_pic {
+  width: 39rpx;
+  height: 42rpx;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page .single .single_fontL {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #666666;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 55rpx;
+}
+.page .single .single_fontR {
+  font-size: 30rpx;
+  color: #222222;
+  line-height: 30rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.page .line {
+  width: 100%;
+  height: 10px;
+  background: #f7f7f7;
+}
+.page .yuE {
+  margin: 40rpx auto 0;
+}
+.page .border_bot {
+  border-bottom: 1px solid #eeeeee;
+}
+.page .keFu {
+  width: 100%;
+  height: 210rpx;
+  background-color: #f7f7f7;
+  font-size: 24rpx;
+  position: relative;
+}
+.page .keFu .keFu_cont {
+  width: 440rpx;
+  height: 132rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 36rpx;
+  color: #999999;
+}

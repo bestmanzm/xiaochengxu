@@ -1,0 +1,16 @@
+<!--返回首页-->
+<template name='toIndex'>
+  <view class="toIndex">
+    <navigator open-type="switchTab" url='../index/index' class="a_btn"><image class="nodata_img" src='/image/toIndex_bg.png'/></navigator>
+  </view>
+</template>
+<template name='toIndex2'>
+  <view class="toIndex2">
+    <navigator open-type="switchTab" url='../index/index' class="a_btn">回到首页</navigator>
+  </view>
+</template>
+<template name='topTip'>
+  <view class='topTipBox text-overflow'>
+    <image src="/image/close_btn.png" bindtap='closeTop' class='close_btn' />点击右上角，置顶小程序，随时看小说。{{tipClass}}<image src="/image/uptip_btn.png" class='uptip_btn' />
+  </view>
+</template>

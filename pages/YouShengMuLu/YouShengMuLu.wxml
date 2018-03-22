@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="all">
+        <view class="all_l">共{{total_num}}章</view>
+    </view>
+    <navigator open-type="reLaunch" url="../YouShengXiangQingYe/YouShengXiangQingYe?sound_book_id={{item.sound_book_id}}&sound_content_id={{item.sound_content_id}}" class="single" wx:key wx:for="{{arr}}" wx:if="{{item.price!=0?false:true}}" >
+        <view class="single_title ellipsis">第{{item.order}}章 {{item.title}}</view>
+        <view class="single_time">
+            <image class="single_time_icon" src="../../images/info_bg4.png"></image>
+            <view class="single_time_font">{{item.createtime}}</view>
+        </view>
+        <!--<view class="single_free">免费</view>-->
+        <!--<image class="single_nofree" src="../../images/mululock_bg.png"></image>-->
+    </navigator>
+
+</view>

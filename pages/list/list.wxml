@@ -1,0 +1,52 @@
+<import src="../common/load.wxml"/>
+
+<view class="page">
+    <view>
+        <navigator hover-class="none" data-book_id="{{arr[0].book_id}}"
+                   url="../bookinfo/bookinfo?book_id={{arr[0].book_id}}" class="top">
+            <image wx:if="{{type==2}}" src="{{arr[0].logo_hb}}" class="top_face"></image>
+            <image wx:if="{{type!=2}}" src="{{arr[0].logo_hb}}" class="top_face"></image>
+            <view class="top_mes">
+                <view class="top_mes_l ellipsis">{{arr[0].book_title}}</view>
+                <view class="recommend_books_single_r_look">
+                    <image class="recommend_books_single_r_look_pic" src="../../images/eye.png"></image>
+                    <view class="recommend_books_single_r_look_num">{{arr[0].total_click_num}}</view>
+                </view>
+            </view>
+
+        </navigator>
+        <view class="line"></view>
+        <view class="list">
+            <navigator wx:key wx:for="{{arr}}" wx:if="{{index>0}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}"
+                       class="recommend_books_single"
+                       hover-class="none">
+                <view>
+                    <image wx:if="{{type==2}}" src="{{item.commend_img}}" class="recommend_books_single_pic"></image>
+                    <image wx:if="{{type!=2}}" src="{{item.logo}}" class="recommend_books_single_pic"></image>
+                    <view class="recommend_books_single_r">
+                        <view class="recommend_books_single_r_title ellipsis">{{item.book_title}}</view>
+                        <view class="recommend_books_single_r_look">
+                            <image class="recommend_books_single_r_look_pic" src="../../images/eye.png"></image>
+                            <view class="recommend_books_single_r_look_num">{{item.total_click_num}}</view>
+                        </view>
+                        <view class="recommend_books_single_r_author">
+                            <view class="recommend_books_single_r_novelType">
+                                <view class="recommend_books_single_r_novelType_single">{{item.tag[0]}}</view>
+                                <view class="recommend_books_single_r_novelType_single">{{item.tag[1]}}</view>
+                                <view class="recommend_books_single_r_novelType_single">{{item.tag[2]}}</view>
+                            </view>
+                        </view>
+                        <view class="recommend_books_single_r_intro ellipsis">更新至{{item.count}}话：{{item.last_chapter_title}}
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+
+    <template wx:if="{{show}}" is="load"/>
+
+
+</view>

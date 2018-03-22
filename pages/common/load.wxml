@@ -1,0 +1,9 @@
+<template name='load'>
+    <!--上拉加载-->
+    <view class="load">
+        <image class="load_pic" src="../../images/daojishi.png"></image>
+        <text class="load_font"> 正在努力加载</text>
+    </view>
+</template>
+
+

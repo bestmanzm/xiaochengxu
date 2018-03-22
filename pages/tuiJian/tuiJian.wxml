@@ -1,0 +1,229 @@
+<!--index.wxml-->
+
+<scroll-view scroll-y scroll-top="{{scrollTop}}" class='page'>
+    <swiper autoplay="autoplay" interval="2000" duration="500" style="width: 100%;height: 440rpx;">
+        <swiper-item wx:for="{{banner}}" wx:key>
+            <navigator hover-class="none" class="banner" url="../bookinfo/bookinfo?book_id={{item.slide_url}}">
+                <image class="banner_pic" src="{{item.slide_pic}}"></image>
+                <image class="banner_bolang" src="../../images/banner_bolang.png"></image>
+            </navigator>
+        </swiper-item>
+    </swiper>
+
+
+    <navigator hover-class="none" hover-class="none" url="../search/search" class="search">
+        <view class="search_div">
+            <image class="search_icon" src="../../images/search.png"></image>
+        </view>
+    </navigator>
+    <navigator wx:if="{{localUrl==''?false:true}}"
+               url="{{localUrl}}" hover-class="none"
+               class="xuKan ellipsis">{{bookName}}
+    </navigator>
+    <view class="bar">
+        <navigator hover-class="none" url="../rank/rank" class="single">
+            <image class="single_pic" src="../../images/ic_arrange@2x.png"></image>
+            <text class="single_font">排行</text>
+        </navigator>
+        <navigator hover-class="none" url="../classify/classify" class="single">
+            <image class="single_pic" src="../../images/ic_classify@2x.png"></image>
+            <text class="single_font">分类</text>
+        </navigator>
+        <navigator hover-class="none" url="../tiaoMan/tiaoMan" class="single">
+            <image class="single_pic" src="../../images/ic_strip@2x.png"></image>
+            <text class="single_font">条漫</text>
+        </navigator>
+        <navigator url="../packet/packet"  class="single">
+            <image class="single_pic" src="../../images/ic_recharge_next@2x.png"></image>
+            <text style="color: #dd625d;" class="single_font">拼红包</text>
+        </navigator>
+    </view>
+
+    <!--主编吐血力荐-->
+    <view class="mould">
+        <text class="mould_title">主编吐血力荐</text>
+        <image class="mould_bolang" src="../../images/bolang.png"></image>
+        <view class="mould_books">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrOne.data}}"
+                       data-id="{{item.book_id}}"
+                       url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="mould_books_single_pic" src="{{item.logo_hb}}"></image>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+                <text class="mould_books_single_intro ellipsis">{{item.intro}}</text>
+            </navigator>
+        </view>
+    </view>
+
+    <!--&lt;!&ndash;VIP土豪专享&ndash;&gt;-->
+    <view class="mouldVip">
+        <text class="mould_title">VIP土豪专享</text>
+        <image class="mould_bolang" src="../../images/bolang.png"></image>
+        <navigator hover-class="none" class="mould_more" url="../list/list?type={{arrTwo.type}}">
+            <view class="mould_more_font">更多</view>
+            <image class="mould_more_pic" src="../../images/arrow_r.png"></image>
+        </navigator>
+        <view class="mould_books">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrTwo.data}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="mould_books_single_pic" src="{{item.commend_img}}"></image>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+                <view class="mould_books_single_type">
+                    <text class="mould_books_single_type_single">{{item.tag[0]}}</text>
+                    <text class="mould_books_single_type_single">{{item.tag[1]}}</text>
+                    <text class="mould_books_single_type_single">{{item.tag[2]}}</text>
+                </view>
+            </navigator>
+
+        </view>
+    </view>
+
+    <!--&lt;!&ndash;高颜值真人动漫&ndash;&gt;-->
+    <view class="mouldMan">
+        <text class="mould_title">高颜值真人动漫</text>
+        <image class="mould_bolang" src="../../images/bolang.png"></image>
+        <navigator hover-class="none" class="mould_more" url="../list/list?type={{arrThr.type}}">
+            <view class="mould_more_font">更多</view>
+            <image class="mould_more_pic" src="../../images/arrow_r.png"></image>
+        </navigator>
+        <view class="mould_books">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrThr.data}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="mould_books_single_pic" src="{{item.logo_hb}}"></image>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+            </navigator>
+
+        </view>
+    </view>
+
+    <!--&lt;!&ndash;限时免费&ndash;&gt;-->
+    <view class="mouldLimit">
+        <text class="mould_title">限时免费</text>
+        <image class="mould_bolang" src="../../images/bolang.png"></image>
+        <view class="limit_timeCont">
+            <view class="limit_timeCont_l">{{h}}</view>
+            <view class="limit_timeConr_r">:</view>
+            <view class="limit_timeCont_l">{{m}}</view>
+            <view class="limit_timeConr_r">:</view>
+            <view class="limit_timeCont_l">{{s}}</view>
+        </view>
+        <view class="mould_books">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrFou.data}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="mould_books_single_pic" src="{{item.logo}}"></image>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+            </navigator>
+        </view>
+    </view>
+
+    <!--&lt;!&ndash;热门新作、精品完结&ndash;&gt;-->
+    <view class="mouldNew">
+        <text data-id="0" catchtap="selectNew" class="mould_title_l {{newOver?'fontColor':''}}">热门新作</text>
+        <image wx:if="{{newOver}}" class="mould_bolang_l" src="../../images/bolang.png"></image>
+        <text data-id="1" catchtap="selectNew" class="mould_title_r {{!newOver?'fontColor':''}}">精品完结</text>
+        <image wx:if="{{!newOver}}" class="mould_bolang_r" src="../../images/bolang.png"></image>
+        <!--热门新作-->
+        <navigator hover-class="none" wx:if="{{newOver}}" class="mould_more" data-type="{{arrFiv.type}}"
+                   url="../list/list?type={{arrFiv.type}}">
+            <view class="mould_more_font">更多</view>
+            <image class="mould_more_pic" src="../../images/arrow_r.png"></image>
+        </navigator>
+        <view wx:if="{{newOver}}" class="mould_booksOne">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrFiv.data}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image data-index="{{index}}" wx:if="{{index==0}}" class="mould_books_single_pic"
+                       src="{{item.logo_hb}}"></image>
+                <image data-index="{{index}}" wx:if="{{index!=0}}" class="mould_books_single_pic"
+                       src="{{item.logo}}"></image>
+                <text class="mould_books_single_type" wx:if="{{index==0}}">{{item.class_name}}</text>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+                <text class="mould_books_single_intro ellipsis">{{item.intro}}</text>
+                <view class="mould_books_single_look">
+                    <image class="mould_books_single_look_pic" src="../../images/eye.png"></image>
+
+                    <view class="mould_books_single_look_num">{{item.total_click_num}}</view>
+                </view>
+                <view class="mould_books_single_update ellipsis" wx:if="{{index==0}}">更新至{{item.count}}话
+                    {{item.last_chapter_title}}
+                </view>
+                <view class="mould_books_single_update ellipsis" wx:if="{{index!=0}}">更新至{{item.count}}话</view>
+            </navigator>
+
+        </view>
+        <!--精品完结-->
+        <navigator hover-class="none" wx:if="{{!newOver}}" class="mould_more" data-type="{{arrSix.type}}"
+                   url="../list/list?type={{arrSix.type}}">
+            <view class="mould_more_font">更多</view>
+            <image class="mould_more_pic" src="../../images/arrow_r.png"></image>
+        </navigator>
+        <view wx:if="{{!newOver}}" class="mould_booksTwo">
+            <navigator hover-class="none" class="mould_books_single" wx:key wx:for="{{arrSix.data}}"
+                       data-book_id="{{item.book_id}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image class="mould_books_single_pic" src="{{item.logo_hb}}"></image>
+                <view class="mould_books_single_type">{{item.class_name}}</view>
+                <view class="mould_books_single_title ellipsis">{{item.book_title}}</view>
+                <text class="mould_books_single_intro ellipsis">{{item.intro}}</text>
+                <view class="mould_books_single_look">
+                    <image class="mould_books_single_look_pic" src="../../images/eye.png"></image>
+                    <view class="mould_books_single_look_num">{{item.total_click_num}}</view>
+
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <!--回顶-->
+    <view class="toTop" catchtap="toTop">
+        <image class="toTop_pic" src="../../images/toTop.png"></image>
+    </view>
+</scroll-view>
+
+
+<view class="cover2" wx:if="{{showOne}}">
+    <navigator wx:if="{{is_ok==0?true:false}}" url="../packet/packet" class="packet">
+        <image class="packet_bgc" src="../../images/packet_bgc.png"></image>
+        <image catchtap="closePacket" class="packet_close" src="../../images/close_next.png"></image>
+        <view class="packet_coin">
+            <text class="packet_coin_num">500</text>
+            <text class="packet_coin_font">金币</text>
+        </view>
+        <view  class="packet_mes" wx:if="{{is_ok==0?true:false}}">
+            <text>您已获得</text>
+            <text style="color: #f7dc69">1</text>
+            <text>个红包，还差</text>
+            <text style="color: #f7dc69">{{5-join_num>4?4:5-join_num}}</text>
+            <text>人即可打开 赶紧邀请好友，一起瓜分</text>
+            <text>500</text>
+            <text>金币大红包</text>
+        </view>
+        <view  class="packet_mesNext" wx:else>
+            已邀请满 <text style="color: #f7dc69">5</text>人，立即瓜分<text style="color: #f7dc69">500</text>金币
+        </view>
+    </navigator>
+    <navigator wx:if="{{is_ok==0?false:true}}" url="../packet/packet?id={{packetId}}" class="packet">
+        <image class="packet_bgc" src="../../images/packet_bgc.png"></image>
+        <image catchtap="closePacket" class="packet_close" src="../../images/close_next.png"></image>
+        <view class="packet_coin">
+            <text class="packet_coin_num">500</text>
+            <text class="packet_coin_font">金币</text>
+        </view>
+        <view  class="packet_mes" wx:if="{{is_ok==0?true:false}}">
+            <text>您已获得</text>
+            <text style="color: #f7dc69">1</text>
+            <text>个红包，还差</text>
+            <text style="color: #f7dc69">{{5-join_num>4?4:5-join_num}}</text>
+            <text>人即可打开 赶紧邀请好友，一起瓜分</text>
+            <text>500</text>
+            <text>金币大红包</text>
+        </view>
+        <view  class="packet_mesNext" wx:else>
+            已邀请满 <text style="color: #f7dc69">5</text>人，立即瓜分<text style="color: #f7dc69">500</text>金币
+        </view>
+    </navigator>
+    <button open-type="share" class="invite" wx:if="{{is_ok==0?true:false}}">
+        <image class="invite_wechat" src="../../images/wechat.png"></image>
+        <view class="invite_friend">邀请微信群好友一起拆</view>
+    </button>
+    <navigator url="../packet/packet?id={{packetId}}"  class="invite" wx:else>
+        <view class="" style="text-align: center;line-height:80rpx;font-size:30rpx;color:#333333;">开红包</view>
+    </navigator>
+</view>

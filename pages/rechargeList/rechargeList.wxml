@@ -1,0 +1,24 @@
+<import src="../common/load.wxml"/>
+<view class="page">
+    <view wx:if="{{nodata}}" class='nodataBox'>
+        <image class="nodata_img" src='/images/noData_bg.png'/>
+        <block wx:if="{{type==0}}">
+            <view class='nodata_tip'>您还没有充值记录哦～</view>
+            <navigator hover-class="none" url="../chonZhi/chonZhi" class="nodata_btn">去充值</navigator>
+        </block>
+        <block wx:if="{{type==1}}">
+            <view class='nodata_tip'>您还没有消费记录哦～</view>
+            <navigator hover-class="none" url="../tuiJian/tuiJian" open-type="switchTab"  class="nodata_btn">去看书</navigator>
+        </block>
+    </view>
+    <view class="list">
+        <view wx:key wx:for="{{arr}}" class="single">
+            <view wx:if="{{type==0}}" class="single_l">充值{{item.coin/100}}元</view>
+            <view wx:if="{{type==1}}" class="single_l">《{{item.book_title}}》消费<text style="color: #FF9364;">{{item.coin}}</text>金币</view>
+            <view wx:if="{{type==0}}" class="single_r">{{item.create_time}}</view>
+            <view wx:if="{{type==1}}" class="single_r">{{item.consume_time}}</view>
+        </view>
+        <template class="load" wx:if="{{show}}" is="load"/>
+    </view>
+
+</view>

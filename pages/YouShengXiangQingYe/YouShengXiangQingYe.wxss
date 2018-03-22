@@ -1,0 +1,295 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 280rpx;
+  width: 100%;
+  overflow-y: auto;
+  border-top: 1px solid #f1f1f1;
+}
+.page .banner {
+  width: 100%;
+  height: 390rpx;
+  position: relative;
+  overflow: hidden;
+}
+.page .banner .banner_Out {
+  width: 100%;
+  height: 390rpx;
+  filter: blur(60rpx);
+}
+.page .banner .banner_inner {
+  width: 260rpx;
+  height: 350rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.page .mes {
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+}
+.page .mes .mes_single {
+  width: 330rpx;
+  position: relative;
+}
+.page .mes .mes_single .mes_single_pic {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+}
+.page .mes .mes_single .mes_single_font {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+  color: #555555;
+  display: inline-block;
+  margin-left: 10rpx ;
+}
+.page .mes .mes_single:nth-child(1) {
+  position: absolute;
+  top: 45rpx;
+  left: 28rpx;
+}
+.page .mes .mes_single:nth-child(2) {
+  position: absolute;
+  top: 45rpx;
+  left: 375rpx;
+}
+.page .mes .mes_single:nth-child(3) {
+  position: absolute;
+  top: 98rpx;
+  left: 28rpx;
+}
+.page .mes .mes_single:nth-child(4) {
+  position: absolute;
+  top: 98rpx;
+  left: 375rpx;
+}
+.page .line {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 20rpx;
+}
+.page .intro {
+  width: 690rpx;
+  margin: 40rpx auto 40rpx;
+}
+.page .intro .intro_cont {
+  font-size: 26rpx;
+  color: #888888;
+  line-height: 44rpx;
+}
+.page .intro .add {
+  width: 690rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-bottom: 50rpx;
+  margin-top: 40rpx;
+  position: relative;
+}
+.page .intro .add .add_l {
+  width: 350rpx;
+  height: 48rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.page .intro .add .add_r {
+  width: 185rpx;
+  height: 48rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.page .intro .add .add_r .addPic {
+  width: 46rpx;
+  height: 46rpx;
+  vertical-align: middle;
+}
+.page .intro .add .add_r .add_font {
+  font-size: 28rpx;
+  color: #ff7833;
+  display: inline-block;
+  margin-left: 15rpx;
+}
+.play {
+  position: absolute;
+  bottom: 110rpx;
+  left: 0;
+  width: 100%;
+  height: 170rpx;
+  box-sizing: border-box;
+}
+.play .play_cont {
+  width: 690rpx;
+  height: 32rpx;
+  line-height: 26rpx;
+  position: absolute;
+  top: 45rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.play .play_cont .author {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  display: inline-block;
+}
+.play .play_cont .title {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+}
+.play .play_line {
+  width: 690rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  top: 105rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16rpx;
+  color: #bbbbbb;
+}
+.play .play_line .play_line_l {
+  position: absolute;
+  top: 0;
+  height: 30rpx;
+  left: 0;
+}
+.play .play_line .play_line_r {
+  position: absolute;
+  top: 0;
+  height: 30rpx;
+  right: 0;
+}
+.play .play_line .play_line_m {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 550rpx;
+  margin-left: -280rpx;
+  background-color: #dddddd;
+}
+.play .play_line .play_line_m .div {
+  height: 2px;
+  background-color: #ff7833;
+  position: absolute;
+  left: 0;
+}
+.play .play_line .play_line_m .div .circle {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px #cccccc;
+  position: absolute;
+  right: -9rpx;
+  top: -5rpx;
+  background-color: #fff;
+}
+.play .slider {
+  width: 570rpx;
+  height: 30rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -285rpx;
+  top: 45%;
+  opacity: 0;
+}
+.bot {
+  width: 100%;
+  height: 110rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bot .muLu {
+  width: 105rpx;
+  height: 110rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bot .muLu .mulu_pic {
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+  left: 30rpx;
+  top: 18rpx;
+}
+.bot .muLu .mulu_font {
+  color: #aaaaaa;
+  font-size: 18rpx;
+  line-height: 18rpx;
+  position: absolute;
+  top: 72rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bot .dingShi {
+  width: 124rpx;
+  height: 110rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.bot .dingShi .dingShi_pic {
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+  left: 40rpx;
+  top: 18rpx;
+}
+.bot .dingShi .dingShi_font {
+  color: #aaaaaa;
+  font-size: 18rpx;
+  line-height: 18rpx;
+  position: absolute;
+  top: 72rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.bot .bot_cont {
+  width: 340rpx;
+  height: 110rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bot .bot_cont .bot_cont_l {
+  width: 30rpx;
+  height: 28rpx;
+  position: absolute;
+  left: 0;
+  top: 49%;
+  transform: translateY(-50%);
+}
+.bot .bot_cont .bot_cont_m {
+  width: 78rpx;
+  height: 78rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -39rpx;
+  top: 49%;
+  transform: translateY(-50%);
+}
+.bot .bot_cont .bot_cont_r {
+  width: 30rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 0;
+  top: 49%;
+  transform: translateY(-50%);
+}
+.bot .audio {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}

@@ -1,0 +1,23 @@
+<!--提示成功-->
+<template name='tip1'>
+  <view class="tip cover">
+    <view class="cover_cont">{{con}}</view>
+  </view>
+</template>
+<template name='tip2'>
+  <view class="tip cover2">
+    <view class="cover_cont">
+      <view class='title'>{{title}}</view>
+      <view class='con'>{{con}}</view>
+      <view class='btns clearfix'>
+        <view class='a_btn' bindtap='tip2Cancel'>取消</view>
+        <view class='a_btn active' bindtap='tip2Enter'>{{enterName}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name='tip3'>
+  <view class="tip cover3">
+    <view class="cover_cont"><view class='con'>{{con}}</view></view>
+  </view>
+</template>

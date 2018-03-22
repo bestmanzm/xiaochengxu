@@ -1,0 +1,8 @@
+
+<view class='page'>
+  <view wx:for="{{source}}" wx:key class="item {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="swichTitle">
+    <view class='title'>{{item.title}}</view>
+    <view class='con'>{{item.con}}</view>
+    <image src='/images/sort_bg1.png'></image>
+  </view>
+</view>

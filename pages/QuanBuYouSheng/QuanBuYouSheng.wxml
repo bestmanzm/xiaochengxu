@@ -1,0 +1,39 @@
+
+
+
+<view class="page">
+    <navigator  class="single" wx:key wx:for="{{arr}}" url="../YouShengXiangQingYe/YouShengXiangQingYe?sound_book_id={{item.sound_book_id}}">
+        <image class="single_pic" src="{{item.cover_url}}"></image>
+        <view class="single_name ellipsis">{{item.book_title}}</view>
+    </navigator>
+</view>
+<view class="bot">
+    <view wx:if="{{cur_page==1?false:true}}" data-page="{{cur_page-1}}" bindtap="askData" class="bot_l"  hover-class="addcolorOne" >
+        <view class="bot_l_circle">
+            <image class="bot_l_circle_pic" src="../../images/arrow_r.png"></image>
+        </view>
+        <view  class="bot_l_font">上一页</view>
+    </view>
+    <view wx:if="{{cur_page==1?true:false}}" class="bot_l">
+        <view class="bot_l_circle">
+            <image class="bot_l_circle_pic" src="../../images/arrow_r.png"></image>
+        </view>
+        <view  class="bot_l_font">上一页</view>
+    </view>
+
+
+    <view class="bot_mid">{{cur_page}}/{{total_page}}</view>
+
+    <view  wx:if="{{cur_page==total_page?false:true}}" data-page="{{cur_page+1}}" bindtap="askData" class="bot_r" hover-class="addcolor">
+        <view class="bot_r_circle">
+            <image class="bot_r_circle_pic" src="../../images/arrow_r.png"></image>
+        </view>
+        <view  class="bot_r_font">下一页</view>
+    </view>
+    <view  wx:if="{{cur_page==total_page?true:false}}" class="bot_r" >
+        <view class="bot_r_circle">
+            <image class="bot_r_circle_pic" src="../../images/arrow_r.png"></image>
+        </view>
+        <view  class="bot_r_font">下一页</view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+
+<view class="error">
+    <form bindsubmit="formSubmit">
+    <view class="section section_gap">
+        <view class="section__con">
+            <textarea maxlength="{{tempTotalNum}}" bindinput='changeInput' name="wrong_content" placeholder='输入您的反馈意见'></textarea>
+            <view class="num"><text style="color: #4FD1E4;">{{200-totalNum}}</text>/200</view>
+        </view>
+    </view>
+
+        <button class="sub_btn" formType="submit">提交反馈</button>
+
+    </form>
+</view>

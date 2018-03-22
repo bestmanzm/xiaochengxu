@@ -1,0 +1,79 @@
+.page{
+  border-top: 1px solid #f1f1f1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .all{
+    width: 690rpx;
+    height: 100rpx;
+   // background-color: pink;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f1f1f1;
+    .all_l{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      font-size: 30rpx;
+      color: #333333;
+      line-height: 100rpx;
+
+    }
+  }
+  .single{
+    width: 690rpx;
+    height: 130rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+
+    .single_title{
+      position: absolute;
+      font-size: 30rpx;
+      line-height: 30rpx;
+      color: #666666;
+      top: 33rpx;
+      left: 5rpx;
+      width: 640rpx;
+    }
+    .single_time{
+      //background-color: pink;
+      width: 400rpx;
+      height: 24rpx;
+      line-height: 24rpx;
+      position: absolute;
+      top: 75rpx;
+      left: 5rpx;
+      .single_time_icon{
+        width: 26rpx;
+        height: 26rpx;
+        vertical-align: bottom;
+      }
+      .single_time_font{
+        font-size: 24rpx;
+        line-height: 24rpx;
+        color: #bbbbbb;
+        display: inline-block;
+        margin-left: 10rpx;
+      }
+    }
+    .single_free{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      font-size: 22rpx;
+      color: #bbbbbb;
+    }
+    .single_nofree{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 24rpx;
+      height: 30rpx;
+    }
+  }
+}

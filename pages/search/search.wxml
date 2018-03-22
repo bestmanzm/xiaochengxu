@@ -1,0 +1,68 @@
+<import src="../common/load.wxml"/>
+<view class="page">
+    <view class="search">
+        <input confirm-type="search" bindblur="addHistory" bindinput="userInput" value="{{val}}" class="inp"
+               maxlength="15" type="text" placeholder="请输入作品名、作者名"/>
+            <image class="search_pic" src="../../images/search_pic.png"></image>
+        <view class="cancle" catchtap="cancle">取消</view>
+        <view  class="close"></view>
+        <view wx:if="{{val==''?false:true}}" class="close" catchtap="clearFont">
+            <image class="close_pic" src="../../images/close.png"></image>
+        </view>
+    </view>
+    <!--//热门、历史搜索-->
+    <view wx:if="{{showOne}}" class="out">
+        <view class="searchOne">
+            <view class="hotSearch">热门搜索</view>
+            <view class="hotList">
+                <view catchtap="search" data-cont="{{item.book_title}}" class="hotListSingle" wx:key
+                      wx:for="{{hotArr}}">{{item.book_title}}
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{historyArr.length==0?false:true}}" class="line"></view>
+        <view wx:if="{{historyArr.length==0?false:true}}" class="searchTwo">
+            <view class="historySearch">搜索历史</view>
+            <image catchtap="delHistory" class="history_del" src="../../images/del.png"></image>
+            <view class="historyList">
+                <view catchtap="search" data-cont="{{item}}" class="historySingle" wx:key wx:for="{{historyArr}}">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="out_next" wx:if="{{!showOne}}">
+        <view class="recommend_books" wx:if="{{fruit}}">
+            <navigator hover-class="none" class="recommend_books_single" data-book_id="{{item.book_id}}" wx:key
+                       wx:for="{{fruitArr}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}">
+                <image src="{{item.logo}}" class="recommend_books_single_pic"></image>
+                <view class="recommend_books_single_r">
+                    <view wx:if="{{!item.addColor}}" class="recommend_books_single_r_title">{{fruitArr.book_title}}
+                    </view>
+                    <view wx:if="{{item.addColor}}" class="recommend_books_single_r_title">{{item.book_title_l}}
+                        <text style="color: #4FD1E4;">{{item.book_title_cont}}</text>
+                        {{item.book_title_r}}
+                    </view>
+                    <view class="recommend_books_single_r_look">
+                        <image class="recommend_books_single_r_look_pic" src="../../images/eye.png"></image>
+                        <view class="recommend_books_single_r_look_num">{{item.total_click_num}}</view>
+                    </view>
+                    <view class="recommend_books_single_r_author">
+                        <view class="recommend_books_single_r_novelType">
+                            <view class="recommend_books_single_r_novelType_single">{{item.tag[0]}}</view>
+                            <view class="recommend_books_single_r_novelType_single">{{item.tag[1]}}</view>
+                            <view class="recommend_books_single_r_novelType_single">{{item.tag[2]}}</view>
+                        </view>
+                    </view>
+                    <view class="recommend_books_single_r_intro ellipsis">
+                        更新至{{item.count}}话：{{item.last_chapter_title}}
+                    </view>
+                </view>
+            </navigator>
+            <template wx:if="{{show}}" is="load"/>
+        </view>
+        <view wx:else class="no">没有搜到“{{val_next}}”</view>
+
+    </view>
+</view>

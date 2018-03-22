@@ -1,0 +1,71 @@
+<import src="../common/tips.wxml"/>
+
+<template is="tip1" wx:if="{{!!tip1Data.con}}" data="{{...tip1Data}}"/>
+
+<view class='bookinfoRoot'>
+  <view class='bookBox'>
+    <image wx:if="{{resource.logo_hb}}" class='bookimg' src='{{resource.logo_hb}}'></image>
+    <image wx:else src="../../images/1.jpg" class="bookimg"></image>
+    <view class='bookinfo'>
+      <view class='text-overflow bookname'>{{resource.book_title}}</view>
+      <view class='clearfix infoBox'>
+        {{resource.word_author}}<image class='eyeimg' src='../../images/eye_bg.png'></image>{{resource.total_click_num}}
+        <view class='fr types'>{{resource.tag}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='bookdetail {{!!ismaxH?"maxH":""}}' bindtap='changeMaxH'>
+    <text>{{resource.intro}}</text>
+    <image class='detailImg' src='../../images/detailImg_bg.png'></image>
+  </view>
+  <view class='bgf7 linH'></view>
+  <view class='newArticle'>
+    <block wx:if="{{!!resource.load_status}}">
+    <!--完结  -->
+    <text class='wj'>完结于  </text> <text class='wjtime'>{{time}}</text>
+    </block>
+    <block wx:else>
+    <!--连载  -->
+    连载至{{resource.count}}话（每{{resource.time_limit}}更新）
+    </block>
+    <view bindtap='changepx' data-px="1" class='a_btn {{px==1?"active":""}}'>正序</view>
+    <view bindtap='changepx' data-px="0" class='a_btn {{px!=1?"active":""}}'>倒序</view>
+  </view>
+  <view class='muluBox items'>
+  <!--active dis  -->
+    <view class='item {{!!item.is_look?"dis":""}} {{!!item.is_current?"active":""}}' wx:for="{{mululist}}" wx:key>
+      <navigator url="../readpage/readpage?book_id={{resource.book_id}}&sortorder={{item.sortorder}}">
+        <view class='linfo text-overflow'>
+          <text>{{item.ch_title}}</text>
+          <image src='../../images/mulucur_bg.png' wx:if="{{!!item.is_current}}"></image>
+          <image src='../../images/mulunolock_bg.png' wx:if="{{!!item.is_vip&&!!item.is_look}}"></image>
+          <image src='../../images/mululock_bg.png' wx:if="{{!!item.is_vip&&!item.is_look}}"></image>
+        </view>
+        <text class='datetime'>{{item.create_time}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='btnsBox clearfix'>
+    <view class='btn shoucang_btn' bindtap='shoucang'>
+      <block wx:if="{{!!resource.is_collection}}">
+        <image src='../../images/shoucang_def.png'></image>
+        已收藏
+      </block>
+      <block wx:else>
+        <image src='../../images/shoucang_active.png'></image>
+        收藏
+      </block>
+    </view>
+    <navigator url="../readpage/readpage?book_id={{resource.book_id}}&sortorder={{resource.sortorder}}">
+      <view class='btn read_btn'>
+        <image src='../../images/beginread_btn.png'></image>
+        <block wx:if="{{!!resource.is_read}}">
+        继续阅读
+        </block>
+        <block wx:else>
+        开始阅读
+        </block>
+      </view>
+    </navigator>
+  </view>
+</view>

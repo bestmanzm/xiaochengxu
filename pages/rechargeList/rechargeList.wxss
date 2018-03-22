@@ -1,0 +1,60 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+}
+.page .list {
+  width: 680rpx;
+}
+.page .list .single {
+  width: 680rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.page .list .single .single_l {
+  font-size: 30rpx;
+  color: #222222;
+}
+.page .list .single .single_r {
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #bbbbbb;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page .nodataBox .nodata_img {
+  width: 210rpx;
+  height: 174rpx;
+  position: absolute;
+  top: 438rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page .nodataBox .nodata_tip {
+  font-size: 28rpx;
+  color: #bbbbbb;
+  position: absolute;
+  top: 640rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page .nodataBox .nodata_btn {
+  width: 146rpx;
+  height: 66rpx;
+  background: #4fd1e4;
+  border-radius: 6rpx ;
+  position: absolute;
+  top: 690rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30rpx;
+  color: #ffffff;
+  line-height: 66rpx;
+  text-align: center;
+}

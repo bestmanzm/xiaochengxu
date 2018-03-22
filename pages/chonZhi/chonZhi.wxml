@@ -1,0 +1,84 @@
+<view class="page">
+    <view class="mine">
+        <view class="mine_l">
+            <image class="mine_l_pic" src="../../images/yuE.png"></image>
+            <view class="mine_l_font">我的余额</view>
+        </view>
+        <view class="mine_r {{arr.total_coin==0?'':'mine_rActive'}}">{{arr.total_coin}}金币</view>
+    </view>
+    <image src="../../images/coin_bolang.png" class="boLang"></image>
+    <view class="list">
+        <view data-m="10" data-id="4" catchtap="tapCoin"  class="lost_single {{tabNum==4?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">1000<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>10<text style="font-size: 22rpx;"></text></view>
+            </view>
+        </view>
+        <view data-m="30" data-id="0" catchtap="tapCoin"  class="lost_single {{tabNum==0?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">3000+300<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>30<text style="font-size: 22rpx;"> 送3元</text></view>
+            </view>
+        </view>
+        <view data-m="50" data-id="1" catchtap="tapCoin"  class="lost_single {{tabNum==1?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">5000+800<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>50<text style="font-size: 22rpx;"> 送8元</text></view>
+            </view>
+        </view>
+        <view data-m="80" data-id="2" catchtap="tapCoin"  class="lost_single {{tabNum==2?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">8000+1500<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>80<text style="font-size: 22rpx;"> 送15元</text></view>
+            </view>
+        </view>
+        <view data-m="100" data-id="3" catchtap="tapCoin"  class="lost_single {{tabNum==3?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">10000+2000<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>100<text style="font-size: 22rpx;"> 送20元</text></view>
+            </view>
+        </view>
+        <!--<view data-m="200" data-id="4" catchtap="tapCoin"  class="lost_single {{tabNum==4?'active':''}}">-->
+            <!--<view class="list_single_coin" style="font-size: 36rpx;">20000+5000<text style="font-size: 24rpx;"> 金币</text></view>-->
+            <!--<view class="lost_single_border"></view>-->
+            <!--<view class="arrow">-->
+                <!--<image class="arrow_bgc" src="../../images/arrow_red.png"></image>-->
+                <!--<image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>-->
+                <!--<view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>200<text style="font-size: 22rpx;"> 送50元</text></view>-->
+            <!--</view>-->
+        <!--</view>-->
+        <view data-m="500" data-id="5" catchtap="tapCoin"  class="lost_single {{tabNum==5?'active':''}}">
+            <view class="list_single_coin" style="font-size: 36rpx;">50000+20000<text style="font-size: 24rpx;"> 金币</text></view>
+            <view class="lost_single_border"></view>
+            <view class="arrow">
+                <image class="arrow_bgc" src="../../images/arrow_red.png"></image>
+                <image class="arrow_bgcNext" src="../../images/arrow_white.png"></image>
+                <view class="arrow_cont"><text style="font-size: 22rpx;">¥ </text>500<text style="font-size: 22rpx;"> 送200元</text></view>
+            </view>
+        </view>
+
+    </view>
+    <image src="../../images/coin_bolang.png" class="boLang_next"></image>
+    <view class="instruction">
+        <image class="san" src="../../images/san.png"></image>
+        <view class="instruction_title">充值说明</view>
+        <view class="pointOne">1、尊敬的用户，加锁的章节需要付费才能看哦。</view>
+        <view class="pointTwo" style="width:680rpx;">2、连载作品会每天持续更新哦，您的支持是大大们最大的动力，感谢您的支持。</view>
+    </view>
+
+</view>

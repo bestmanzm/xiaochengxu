@@ -1,0 +1,168 @@
+/**app.wxss**/
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+/*弹出层遮罩的样式*/
+.cover {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+}
+.cover .cover_cont {
+    min-width: 350rpx;
+    padding: 0 20rpx;
+    height: 164rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -82rpx;
+    left: 50%;
+    /*margin-left: -175rpx;*/
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: #fff;
+    color: #333333;
+    font-size: 32rpx;
+    line-height: 164rpx;
+    text-align: center;
+    border-radius: 8px 8px;
+    box-shadow: 1px 1px 10px #d9d9d9;
+}
+.cover2 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 200;
+}
+.cover2 .cover_cont {
+  width: 80%;
+  left: 10%;
+  position: absolute;
+  top: 30%;
+  background-color: #fff;
+  color: #666;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  border-radius: 8px;
+}
+.cover2 .cover_cont .title{
+  font-size: 36rpx;
+  line-height: 136rpx;
+  color: #222;
+}
+.cover2 .cover_cont .con{
+  padding: 7rpx 0 60rpx;
+}
+.cover2 .cover_cont .btns{
+  border-top: 1px solid #eee;
+}
+.cover2 .cover_cont .btns .a_btn{
+  float: left;
+  width: 50%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #bbb;
+}
+.cover2 .cover_cont .btns .a_btn:not(:first-child){
+  border-left: 1px solid #eee;
+}
+.cover2 .cover_cont .btns .a_btn.active{
+  color: #4FD1E4;
+}
+.cover3 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+}
+.cover3 .cover_cont {
+    width: 100%;
+    position: fixed;
+    bottom: 160rpx;
+    left: 0;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 86rpx;
+    text-align: center;
+}
+.cover3 .cover_cont .con{
+    min-width: 230rpx;
+    margin: 0 auto;
+    padding: 0 28rpx;
+    display: inline-block;
+    height: 86rpx;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 6px;
+}
+
+ /*下拉加载的样式*/
+.load {
+    height: 90rpx;
+    line-height:90rpx;
+    width: 100%;
+    font-size: 26rpx;
+    text-align: center;
+    color: #4FD1E4;
+    /*background-color: pink;*/
+
+}
+.load .load_pic {
+    width: 24rpx;
+    height: 28rpx;
+    vertical-align: middle;
+    animation: picRotate 1s infinite;
+}
+@keyframes picRotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+.load .load_font {
+    line-height: 90rpx;
+}
+
+
+
+view,view::before,view:after{margin:0;padding:0;box-sizing: border-box;}
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -moz-binding: url(ellipsis.xml#ellipsis);
+}
+.fl{float: left!important;}
+.fr{float: right!important;}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.bgf7{background-color: #f7f7f7;}
+.linH{height: 10rpx;}
+
+
+.ellipsis{
+    word-break:break-all;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}

@@ -1,0 +1,44 @@
+<!--pages/classify/classify.wxml-->
+<import src="../common/load.wxml"/>
+
+<scroll-view bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-y class="page">
+    <view wx:if="{{header}}" class="header">
+        <scroll-view scroll-x="true" class="header_top">
+            <view data-title_one="全部" catchtap="tabOne" data-id="0" class="header_top_single {{typeOne==0?'colorActive':''}}">全部</view>
+            <view data-title_one="{{item.name}}" wx:key wx:for="{{arrTypes}}" catchtap="tabOne" data-option_id="{{item.option_id}}" data-id="{{index+1}}" class="header_top_single  {{typeOne==index+1?'colorActive':''}}">{{item.name}}</view>
+        </scroll-view>
+
+        <view class="header_bot">
+            <view data-title_two="全部" data-load_status=""  data-id="0" catchtap="tabTwo" class="header_bot_single {{typeTwo==0?'colorActive':''}}">全部</view>
+            <view data-title_two="连载" data-load_status="0" data-id="1" catchtap="tabTwo" class="header_bot_single {{typeTwo==1?'colorActive':''}}">连载</view>
+            <view data-title_two="完结" data-load_status="1" data-id="2" catchtap="tabTwo" class="header_bot_single {{typeTwo==2?'colorActive':''}}">完结</view>
+        </view>
+
+    </view>
+    <view  wx:if="{{!header}}" class="header_next">
+        <view class="header_next_cont">
+            <view wx:if="{{title_one==title_two}}" class="header_next_title">
+                <image class="linePic_l" src="../../images/line_l.png"></image>
+                 全部
+                <image class="linePic_r" src="../../images/line_r.png"></image>
+            </view>
+            <view wx:else class="header_next_title">
+                <image class="linePic_l" src="../../images/line_l.png"></image>
+                {{title_one}} · {{title_two}}
+                <image class="linePic_r" src="../../images/line_r.png"></image>
+            </view>
+
+        </view>
+
+    </view>
+
+    <view class="list clearfix">
+        <navigator class="list_single"  url="../bookinfo/bookinfo?book_id={{item.book_id}}"  wx:key wx:for="{{arr}}" data-bookId="{{item.book_id}}">
+            <image wx:if="{{item.logo!=''}}" class="list_single_face" lazy-load="true" src="{{item.logo}}"></image>
+            <image wx:if="{{item.logo==''}}" class="list_single_face" lazy-load="true" src="../../images/nopic.png"></image>
+            <view class="list_single_title">{{item.book_title}}</view>
+        </navigator>
+    </view>
+    <template is="load" wx-if="{{show}}"/>
+</scroll-view>
+

@@ -1,0 +1,138 @@
+<view class="page" data-packetId="{{packetId}}" data-packetId_next="{{packetId_next}}">
+    <view class="bgOut" style="height: {{view.height}}rpx">
+        <image class="bg" src="../../images/packet_bg.jpg"></image>
+    </view>
+    <!--五人-->
+    <view class="man" wx:if="{{showFou}}">
+        <view class="man_single">
+            <view class="man_single_pic">
+                <image class="man_one_header" wx:if="{{arr_man[0].headerimgurl}}" src="{{arr_man[0].headerimgurl}}"></image>
+                <image class="man_one_header" wx:else src="../../images/moren.png"></image>
+            </view>
+            <view class="man_single_name ellipsis">{{arr_man[0].user_name}}</view>
+        </view>
+        <view class="man_single">
+            <view class="man_single_pic">
+                <image class="man_one_header" wx:if="{{arr_man[1].headerimgurl}}" src="{{arr_man[1].headerimgurl}}"></image>
+                <image class="man_one_header" wx:else src="../../images/moren.png"></image>
+            </view>
+        </view>
+        <view class="man_single">
+            <view class="man_single_pic">
+                <image class="man_one_header" wx:if="{{arr_man[2].headerimgurl}}" src="{{arr_man[2].headerimgurl}}"></image>
+                <image class="man_one_header" wx:else src="../../images/moren.png"></image>
+            </view>
+        </view>
+        <view class="man_single">
+            <view class="man_single_pic">
+                <image class="man_one_header" wx:if="{{arr_man[3].headerimgurl}}" src="{{arr_man[3].headerimgurl}}"></image>
+                <image class="man_one_header" wx:else src="../../images/moren.png"></image>
+            </view>
+        </view>
+        <view class="man_single">
+            <view class="man_single_pic">
+                <image class="man_one_header" wx:if="{{arr_man[4].headerimgurl}}" src="{{arr_man[4].headerimgurl}}"></image>
+                <image class="man_one_header" wx:else src="../../images/moren.png"></image>
+            </view>
+        </view>
+
+        <view class="man_rule" catchtap="openRule">活动规则</view>
+        <view class="man_time">{{h}}:{{m}}:{{s}}</view>
+        <view wx:if="{{!isFull}}" class="man_five">满5人即可瓜分500金币，快邀请好友来拆红包</view>
+        <button wx:if="{{!isFull}}" open-type="share" class="man_invite">
+            <image class="invite_wechat" src="../../images/wechat_next.png"></image>
+            <view class="invite_friend">邀请微信群好友一起拆</view>
+        </button>
+
+        <view wx:if="{{isFull}}" class="man_five">邀请已满5人，立即瓜分500金币</view>
+        <view wx:if="{{isFull}}" catchtap="open" class="man_open">开红包</view>
+
+    </view>
+    <!--主编兔血力荐-->
+    <view class="toXue" style="display: block;" wx:if="{{showThr}}">
+        <view class="toXue_title">主编吐血力荐</view>
+        <navigator open-type="switchTab"  url="/pages/tuiJian/tuiJian" hover-class="none" class="mould_more">
+            <view class="mould_more_font">更多</view>
+            <image class="mould_more_pic" src="../../images/arrow_r.png"></image>
+        </navigator>
+
+        <view class="mould_books">
+            <navigator wx:key wx:for="{{arr.data}}" url="../bookinfo/bookinfo?book_id={{item.book_id}}" hover-class="none" class="mould_books_single">
+                <image class="mould_books_single_pic" src="{{item.logo_hb}}"></image>
+                <text class="mould_books_single_title ellipsis">{{item.book_title}}</text>
+                <text class="mould_books_single_intro ellipsis">{{item.intro}}</text>
+            </navigator>
+
+        </view>
+    </view>
+
+    <!--拆红包后-->
+    <view class="Open" wx:if="{{showFiv}}">
+        <image class="gongXi" src="../../images/gongXi.png"></image>
+        <image class="quan" src="../../images/quan.png"></image>
+        <view class="packet_coin">
+            <text class="packet_coin_num">{{afterData.coin}}</text>
+            <text class="packet_coin_font"> 金币</text>
+        </view>
+        <button wx:if="{{afterData.is_have==1}}" catchtap="open" class="btn_one" >拆一个新红包</button>
+        <button wx:if="{{afterData.is_have==0}}" open-type="share" catchtap="" class="btn_one" >拆一个新红包</button>
+
+        <navigator open-type="switchTab"  url="/pages/tuiJian/tuiJian" class="btn_two">马上去看漫画</navigator>
+        <view catchtap="openRule" class="rule">活动规则</view>
+    </view>
+
+    <!--朋友手气-->
+    <view class="Friend" wx:if="{{showSix}}">
+        <view class="Friend_look">看看朋友的手气如何</view>
+        <view class="Friend_single" wx:key wx:for="{{arrFiveMessage}}" wx:if="{{item.is_open==1?true:false}}">
+            <view class="Friend_single_pic">
+                <image class="Friend_single_pic_header" src="{{item.headerimgurl}}"></image>
+            </view>
+            <view class="Friend_single_name ellipsis" wx:if="{{item.is_max==1?true:false}}">{{item.user_name}}</view>
+            <view class="Friend_single_shouqi" wx:if="{{item.is_max==1?true:false}}">手气最佳</view>
+            <view class="Friend_single_coin">{{item.coin}}金币</view>
+
+            <view class="Friend_single_nameNext ellipsis" wx:if="{{item.is_max==1?false:true}}">{{item.user_name}}</view>
+        </view>
+
+    </view>
+
+</view>
+
+<!--好友助力-->
+<view class="cover2" wx:if="{{showOne}}">
+    <view class="zhuLi" wx:if="{{showOne_one}}">
+        <view class="zhuLi_one">
+            <view class="zhuLi_one_title" style="font-size:32rpx">好友助力</view>
+            <view style="margin-top: 95rpx;">活动一，收费章节免费读：</view>
+            <view>转发至微信好友，可免费解锁该本漫画付费章节，每次分享解锁1章，每日最多解锁2章。</view>
+            <view>活动二，好友助力，五折优惠：</view>
+            <view>转发小程序书籍页面，并邀请好友点击，即可额外获得付费章节的五折优惠。有多少位好友为您点击助力 ，就可以获得多少付费章节的五折优惠。当日助力，仅限当日使用。</view>
+            <view>该活动的解释权归草莓漫画所有。</view>
+        </view>
+        <view class="zhuLi_wechat">转发至微信好友</view>
+        <view class="zhuLi_no">有钱任性不转发</view>
+        <view class="zhuLi_close" catchtap="close">
+            <image class="zhuLi_close_pic" src="../../images/close_next.png"></image>
+        </view>
+    </view>
+
+
+    <view class="guiZe" wx:if="{{showOne_two}}">
+        <view class="guiZe_one">
+            <view class="guiZe_one_title" style="font-size: 32rpx;">活动规则</view>
+            <view style="margin-top: 95rpx;"> 1、用户可邀请好友共同拆红包。满5人即可拆开一个总额为500金币的红包，每人获得红包金额随机，
+                红包金额最高者将获得“手气最佳”的称号。
+            </view>
+            <view>2、每个红包发起后24小时内未集齐5人拆分失败，无红包奖励。</view>
+            <view>3、活动期间，同一个红包每人只能拆分一次，但发起红包次数不限。</view>
+            <view>4、发起拆红包的用户需要在该红包满5人拆成功或者逾期失败后才能发起拆下一个红包。</view>
+            <view>5、每人只可助力好友一次，发红包不限次数，好友重复邀请无效。</view>
+            <view>6、红包奖励为金币，不支持提现</view>
+            <view style="margin-top: 30rpx">活动声明：本活动最终解释权归草莓漫画所有。</view>
+        </view>
+        <view class="guiZe_close" catchtap="close">
+            <image class="zhuLi_close_pic" src="../../images/close_next.png"></image>
+        </view>
+    </view>
+</view>

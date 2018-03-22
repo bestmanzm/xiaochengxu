@@ -1,0 +1,347 @@
+.page{
+  width:100%;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  //background-color: pink;
+  .tab{
+    height:90rpx;
+    width:100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    font-size:30rpx;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom:1px solid #dddddd;
+    z-index: 11;
+    background-color: #fff;
+    .tab_single{
+      height:90rpx;
+      width:100rpx;
+      font-size:30rpx;
+      //background-color: pink;
+      text-align: center;
+      line-height:90rpx;
+      color: #aaaaaa;
+      .tab_single_pic{
+        width:26rpx;
+        height:28rpx;
+        position: absolute;
+        top:50%;
+        margin-top:-14rpx;
+        right: 20rpx;
+        display: block;
+      }
+      .tab_single_shaiXuan{
+        display: none;
+      }
+    }
+    .tab_single:nth-child(1){
+      position: absolute;
+      left:210rpx;
+      top:0;
+    }
+    .tab_single:nth-child(2){
+      position: absolute;
+      left:447rpx;
+      top:0;
+    }
+    .tab_single:nth-child(3){
+      position: absolute;
+      right:0;
+      top:0;
+    }
+    .tab_active{
+      color: #222222;
+      .tab_single_shaiXuan{
+        display: block;
+        color: #4fd1e4;
+      }
+      .tab_single_pic{
+        display: none;
+      }
+    }
+
+  }
+  //收藏
+  .tabCont{
+    position: absolute;
+    top:90rpx;
+    bottom:0;
+    left:0;
+    width:100%;
+    //background-color: pink;
+    .tabCont_single{
+      width:236rpx;
+      height:408rpx;
+      background-color: #fff;
+      margin-right:21rpx;
+      float: left;
+      margin-top: 30rpx;
+      position: relative;
+      .tab_single_pic{
+        width:236rpx;
+        height:316rpx;
+        position: absolute;
+        top:0;
+        left:0;
+      }
+      .tab_single_title{
+        font-size:30rpx;
+        color: #222222;
+        position: absolute;
+        top:337rpx;
+        left:20rpx;
+      }
+      .tab_single_update{
+        font-size:24rpx;
+        color: #aaaaaa;
+        position: absolute;
+        top:380rpx;
+        left:20rpx;
+      }
+      .isUpdate{
+        width:46rpx;
+        height:68rpx;
+        background:rgba(255,95,95,1);
+        position: absolute;
+        top:0;
+        left:20rpx;
+        border-radius: 0 0 23rpx 23rpx;
+        font-size:24rpx;
+        line-height:24rpx;
+        text-align: center;
+        color: #ffffff;
+        padding-top: 10rpx;
+      }
+      .tabCont_single_cover{
+        display: none;
+        position: absolute;
+        width:236rpx;
+        height:316rpx;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,.5);
+
+        .tabCont_single_cover_ghost{
+          width:62rpx;
+          height:62rpx;
+          position: absolute;
+          bottom:0;
+          right:25rpx;
+        }
+      }
+    }
+    .tabCont_single:nth-child(3n){
+      float: right;
+      margin-right:0;
+    }
+    .tabCont_singleSpecial{
+      width:100%;
+      height:120rpx;
+      float: left;
+
+    }
+    .load{
+      position: fixed;
+      bottom: 0;
+    }
+
+  }
+  .shouCang_active{//添加收藏要准备删除的样式
+    .tabCont_single{
+      .tabCont_single_cover{
+        display: block;
+      }
+    }
+  }
+  //历史
+  .history{
+    position: absolute;
+    top:90rpx;
+    left:0;
+    bottom:0;
+    width:100%;
+    .history_one{
+      position: relative;
+      width: 100%;
+      height:210rpx;
+      .history_single{
+        width:100%;
+        height:210rpx;
+        //background-color: pink;
+        position: relative;
+        .history_single_pic{
+          position: absolute;
+          width: 126rpx;
+          height:170rpx;
+          left:20rpx;
+          bottom:0;
+        }
+        .history_single_title{
+          font-size:30rpx;
+          line-height:30rpx;
+          color: #222222;
+          position: absolute;
+          top:60rpx;
+          left:175rpx;
+        }
+        .history_single_update{
+          position: absolute;
+          top:120rpx;
+          left:175rpx;
+          color: #aaaaaa;
+          font-size:24rpx;
+        }
+        .history_single_lastTime{
+          color: #4FD1E4;
+          font-size:24rpx;
+          line-height:24rpx;
+          position: absolute;
+          left:175rpx;
+          top:166rpx;
+
+        }
+        .history_single_line{
+          width:555rpx;
+          height:1px;
+          position: absolute;
+          left:175rpx;
+          bottom:0;
+          background:rgba(238,238,238,1);
+        }
+      }
+      .history_single_cover{
+        display: none;
+      }
+    }
+    .load{
+      position: fixed;
+      bottom: 0;
+    }
+    .history_oneSpecial{
+      width:100%;
+      height:120rpx;
+    }
+
+  }
+  .history_active{
+    .history_one{
+      position: relative;
+      width: 100%;
+      height:210rpx;
+      .history_single{
+        width:630rpx;
+        height:210rpx;
+        //background-color: pink;
+        position: absolute;
+        right:0;
+        top:0;
+        .history_single_pic{
+          position: absolute;
+          width: 126rpx;
+          height:170rpx;
+          left:20rpx;
+          bottom:0;
+        }
+        .history_single_title{
+          font-size:30rpx;
+          line-height:30rpx;
+          color: #222222;
+          position: absolute;
+          top:60rpx;
+          left:175rpx;
+        }
+        .history_single_update{
+          position: absolute;
+          top:120rpx;
+          left:175rpx;
+          color: #aaaaaa;
+          font-size:24rpx;
+        }
+        .history_single_lastTime{
+          color: #4FD1E4;
+          font-size:24rpx;
+          line-height:24rpx;
+          position: absolute;
+          left:175rpx;
+          top:166rpx;
+
+        }
+        .history_single_line{
+          width:555rpx;
+          height:1px;
+          position: absolute;
+          left:175rpx;
+          bottom:0;
+          background:rgba(238,238,238,1);
+        }
+      }
+      .history_single_cover{
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:210rpx;
+        //background-color: pink;
+        .history_single_cover_circle{
+          position: absolute;
+          top:50%;
+          transform: translateY(-50%);
+          left:38rpx;
+          width:44rpx;
+          height:44rpx;
+        }
+      }
+    }
+  }
+
+  //全选和删除
+  .allDel{
+    width:100%;
+    height:110rpx;
+    //background-color: pink;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-top:1rpx solid #eeeeee;
+    .allDel_l{
+      width:49%;
+      height:110rpx;
+      border-right:1px solid #eeeeee;
+      line-height:110rpx;
+      text-align: center;
+      .allDel_l_pic{
+        width:30rpx;
+        height:30rpx;
+        vertical-align: middle;
+      }
+      .allDel_l_font{
+        font-size:30rpx;
+        color: #666666;
+      }
+    }
+    .allDel_r{
+      width:50%;
+      height:110rpx;
+      line-height:110rpx;
+      text-align: center;
+      .allDel_r_pic{
+        width:30rpx;
+        height:30rpx;
+        vertical-align: middle;
+      }
+      .allDel_r_font{
+        font-size:30rpx;
+        color: #acacac;
+      }
+    }
+  }
+}

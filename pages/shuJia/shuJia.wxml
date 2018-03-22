@@ -1,0 +1,69 @@
+<import src="../common/load.wxml"/>
+
+<view class="page">
+    <view class="tab">
+        <view catchtap="tapTab" data-id="0" class="tab_single {{tabNum==0?'tab_active':''}}">收藏</view>
+        <view catchtap="tapTab" data-id="1" class="tab_single {{tabNum==1?'tab_active':''}}">历史</view>
+        <view catchtap="tapTab" data-id="2" class="tab_single {{tabThr==true?'tab_active':''}}">
+            <text class="tab_single_shaiXuan">筛选</text>
+            <image class="tab_single_pic" src="../../images/del.png"></image>
+        </view>
+    </view>
+
+    <!--收藏-->
+    <view wx:if="{{tabNum==0}}" class="tabCont {{shouCangDel==true?'shouCang_active':''}}">
+        <view  wx:key wx:for="{{arrOne}}"   class="tabCont_single">
+            <navigator  hover-class="none" url="../readpage/readpage?book_id={{item.book_id}}&sortorder={{item.sortorder}}">
+                <image class="tab_single_pic" src="{{item.logo}}"></image>
+            </navigator>
+            <view class="tab_single_title ellipsis">{{item.book_title}}</view>
+            <view class="tab_single_update">{{item.sortorder}}/{{item.count}}</view>
+            <view wx:if="{{item.is_new==0?false:true}}" class="isUpdate">更新</view>
+            <view class="tabCont_single_cover" data-index="{{index}}" data-isDel="{{item.isDel}}" catchtap="selectDelShuJia">
+                <image wx:if="{{!item.isDel}}" class="tabCont_single_cover_ghost" src="../../images/ghost.png"></image>
+                <image wx:if="{{item.isDel}}" class="tabCont_single_cover_ghost" src="../../images/ghost_.png"></image>
+            </view>
+        </view>
+        <template class="load" wx:if="{{show}}" is="load"/>
+        <!--最后一个不渲染仅仅占位置-->
+        <view class="tabCont_singleSpecial">
+
+        </view>
+    </view>
+
+
+
+    <!--历史-->
+    <view  wx:if="{{tabNum==1}}" class="history {{historyDel==true?'history_active':''}}">
+        <view wx:key wx:for="{{arr_next}}"  class="history_one" >
+            <navigator  hover-class="none" url="../readpage/readpage?book_id={{item.book_id}}&sortorder={{item.sortorder}}" class="history_single">
+                <image src="{{item.logo}}" class="history_single_pic"></image>
+                <view class="history_single_title">{{item.book_title}}</view>
+                <view class="history_single_update">最近更新至{{item.count}}话</view>
+                <view class="history_single_lastTime">上次阅读至{{item.sortorder}}话</view>
+                <view class="history_single_line"></view>
+            </navigator>
+            <view class="history_single_cover" catchtap="selectHistory" data-isDel="{{item.isDel}}" data-index="{{index}}">
+                <image wx:if="{{!item.isDel}}" class="history_single_cover_circle" src="../../images/circle.png"></image>
+                <image wx:if="{{item.isDel}}" class="history_single_cover_circle" src="../../images/circle_next.png"></image>
+            </view>
+        </view>
+        <template class="load" wx:if="{{show}}" is="load"/>
+        <view class="history_oneSpecial"></view>
+    </view>
+
+    <!--全选和删除-->
+    <view class="allDel" wx:if="{{allDel}}">
+        <view class="allDel_l" catchtap="allSelect">
+            <image class="allDel_l_pic" src="../../images/circle_.png"></image>
+            <text wx:if="{{flagAll}}"  class="allDel_l_font"> 全选</text>
+            <text wx:if="{{!flagAll}}" class="allDel_l_font"> 取消全选</text>
+        </view>
+        <view class="allDel_r" catchtap="del">
+            <image wx:if="{{!deColor}}" class="allDel_r_pic" src="../../images/del.png"></image>
+            <text wx:if="{{!deColor}}" class="allDel_r_font"> 删除</text>
+            <image wx:if="{{deColor}}" class="allDel_r_pic" src="../../images/del_.png"></image>
+            <text wx:if="{{deColor}}" class="allDel_r_font" style="color: #ff5f5f;"> 删除</text>
+        </view>
+    </view>
+</view>

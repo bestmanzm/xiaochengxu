@@ -1,0 +1,353 @@
+/* pages/readpage/readpage.wxss */
+.closeBox{
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.noNetwork{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  z-index: 50;
+}
+.noNetwork view{
+  width: 164rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 4rpx;
+  font-size: 30rpx;
+  color: #666;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+}
+swiper{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+swiper image{
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  width: initial;
+}
+.vimg{
+  width: 100%;
+  display: block;
+}
+.curNameBox{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 56rpx;
+  line-height: 56rpx;
+  padding: 0 20rpx;
+  font-size: 20rpx;
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+  overflow: hidden;
+}
+.updateTime{
+  font-size: 26rpx;
+  line-height: 42rpx;
+  padding: 50rpx 0;
+  color: #999;
+  text-align: center;
+}
+.updateTime .time{
+  color: #333;
+}
+.verticalBox{
+  padding-bottom: 80rpx;
+}
+.verticalBox scroll-view{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.likeBox .tabCont_single {
+  width: 236rpx;
+  height: 408rpx;
+  background-color: #fff;
+  margin-right: 21rpx;
+  float: left;
+  position: relative;
+}
+.likeBox .tabCont_single .tab_single_pic {
+  width: 236rpx;
+  height: 316rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.likeBox .tabCont_single .tab_single_title {
+  font-size: 30rpx;
+  color: #222222;
+  position: absolute;
+  top: 337rpx;
+  left: 20rpx;
+}
+.likeBox .tabCont_single .tab_single_update {
+  font-size: 24rpx;
+  color: #aaaaaa;
+  position: absolute;
+  top: 380rpx;
+  left: 20rpx;
+}
+.likeBox .tabCont_single .isUpdate {
+  width: 46rpx;
+  height: 68rpx;
+  background: #ff5f5f;
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  border-radius: 0 0 23rpx 23rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 10rpx;
+}
+.likeBox .tabCont_single .tabCont_single_cover {
+  display: none;
+  position: absolute;
+  width: 236rpx;
+  height: 316rpx;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.likeBox .tabCont_single .tabCont_single_cover .tabCont_single_cover_ghost {
+  width: 62rpx;
+  height: 62rpx;
+  position: absolute;
+  bottom: 0;
+  right: 25rpx;
+}
+.likeBox .tabCont_single:nth-child(3n) {
+  float: right;
+  margin-right: 0;
+}
+.likeBox .tabCont_singleSpecial {
+  width: 100%;
+  height: 120rpx;
+  float: left;
+}
+.likeBox .tabCont_single .tabCont_single_cover {
+  display: block;
+}
+.liketitle{
+  font-size: 34rpx;
+  color: #222;
+  line-height: 114rpx;
+  margin-top: 20rpx;
+}
+.liketitle image{
+  display: inline-block;
+  width: 43rpx;
+  height: 46rpx;
+  margin: 0 12rpx 0 20rpx;
+  vertical-align: middle;
+}
+
+.bottomMenuBox{
+  position: fixed;
+  width: 100%;
+  height: 118rpx;
+  background: rgba(255,255,255,.97);
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  border-top: 1px solid #ddd;
+}
+.bottomMenuBox view{
+  float: left;
+  width: 20%;
+  font-size: 22rpx;
+  line-height: 54rpx;
+  color: #999;
+  text-align: center;
+  position: relative;
+  height: 118rpx;
+}
+.bottomMenuBox view view{width: 100%;}
+.bottomMenuBox view text{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.bottomMenuBox view .dis{
+  display: none;
+  color: #bbb;
+}
+.bottomMenuBox view.active image,
+.bottomMenuBox view.active text{display: none;}
+.bottomMenuBox view.active .dis{display: block;}
+.bottomMenuBox view image{
+  display: block;
+  margin: 20rpx auto 0;
+}
+.bottomMenuBox view image.img1.tran{transform: rotate(180deg);}
+.bottomMenuBox view image.img1{width: 101rpx;height: 50rpx;}
+.bottomMenuBox view image.img2{width: 39rpx;height: 46rpx;}
+.bottomMenuBox view image.img3{width: 46rpx;height: 43rpx;}
+.bottomMenuBox view image.img4{width: 22rpx;height: 38rpx;}
+.bottomMenuBox view image.img5{transform: rotate(180deg);}
+
+.autoBuyBox{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.7);
+  z-index: 100;
+}
+.autoBuyBox .bgImg{
+  position: absolute;
+  width: 100%;
+  height: 878rpx;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.autoBuyBox .conBox{
+  padding: 0 48rpx;
+  font-size: 34rpx;
+  color: #002222;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 360rpx;
+  bottom: 0;
+  left: 0;
+}
+.autoBuyBox .conBox .curpay text{
+  font-size: 72rpx;
+  line-height: 100%;
+  color: #4FD1E4;
+}
+.autoBuyBox .conBox .buy_btn{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #4FD1E4;
+  border-radius: 8rpx;
+  display: block;
+  margin-top: 100rpx;
+}
+.autoBuyBox .conBox .yueBox{
+  font-size: 26rpx;
+  color: #666;
+  line-height: 106rpx;
+  position: relative;
+}
+.autoBuyBox .conBox .yueBox .txt1{
+  color: #4FD1E4;
+  margin-left: 10rpx;
+}
+.autoBuyBox .conBox .yueBox .txt2{
+  color: #aaa;
+}
+.autoBuyBox .conBox .yueBox .fr{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 24rpx;
+  color: #aaa;
+}
+.autoBuyBox .conBox .yueBox .fr image{
+  display: inline-block;
+  width: 33rpx;
+  height: 32rpx;
+  margin-right: 13rpx;
+  vertical-align: middle;
+}
+
+/*好友助力*/
+.zhuLi {
+  width: 694rpx;
+  height: 810rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 140rpx;
+}
+.zhuLi .zhuLi_one {
+  position: absolute;
+  width: 100%;
+  height: 550rpx;
+  background-color: #fff9e9;
+  border-radius: 15rpx 15rpx;
+  color: #000;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  padding: 0 24rpx 0 24rpx;
+  text-align: justify;
+}
+.zhuLi .zhuLi_one .zhuLi_one_title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34rpx;
+  top: 38rpx;
+}
+.zhuLi .zhuLi_wechat {
+  position: absolute;
+  width: 694rpx;
+  height: 72rpx;
+  background-color: #eb4632;
+  text-align: center;
+  line-height: 72rpx;
+  border-radius: 36rpx 36rpx;
+  top: 610rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+}
+.zhuLi .zhuLi_no {
+  position: absolute;
+  width: 694rpx;
+  height: 72rpx;
+  background-color: #f09358;
+  text-align: center;
+  line-height: 72rpx;
+  border-radius: 36rpx 36rpx;
+  top: 735rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+}
+.zhuLi .zhuLi_close {
+  position: absolute;
+  right: 0;
+  top: -100rpx;
+  background-color: red;
+}
+.zhuLi .zhuLi_close .zhuLi_close_pic {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

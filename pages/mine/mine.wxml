@@ -1,0 +1,47 @@
+<!--pages/mine/mine.wxml-->
+<view class="page">
+    <view class="header">
+        <image class="header_bgc" src="../../images/mine_bgc.png"></image>
+        <view class="header_head">
+            <image class="header_head_pic" src="{{arr.headimgurl}}"></image>
+        </view>
+        <view class="header_name">{{arr.nickname}}/{{arr.user_id}}</view>
+        <navigator url="../chonZhi/chonZhi" class="header_recharge">充值</navigator>
+    </view>
+    <view class="single yuE">
+        <image class="single_pic" src="../../images/mine_one.png"></image>
+        <view class="single_fontL">我的余额</view>
+        <view class="single_fontR">{{arr.total_coin}}金币</view>
+    </view>
+    <view class="line"></view>
+    <navigator hover-class="none" url="../rechargeList/rechargeList?type=0" class="single border_bot">
+        <image class="single_pic" src="../../images/mine_two.png"></image>
+        <view class="single_fontL">充值记录</view>
+    </navigator>
+    <navigator hover-class="none" url="../rechargeList/rechargeList?type=1" class="single">
+        <image class="single_pic" src="../../images/mine_thr.png"></image>
+        <view class="single_fontL">消费记录</view>
+    </navigator>
+    <view class="line"></view>
+    <navigator hover-class="none" url="../fankui/fankui" class="single border_bot">
+        <image class="single_pic" src="../../images/mine_fou.png"></image>
+        <view class="single_fontL">意见反馈</view>
+    </navigator>
+    <navigator hover-class="none" url="../question/question" class="single">
+        <image class="single_pic" src="../../images/mine_fiv.png"></image>
+        <view class="single_fontL">使用帮助</view>
+    </navigator>
+    <view class="keFu">
+        <view class="keFu_cont">
+            <view>客服QQ：{{arr_next.qq}}</view>
+            <view>电话：{{arr_next.phone}}</view>
+            <view>工作时间：周一至周五 {{arr_next.work_time}}</view>
+            <view>未满18岁的用户，请在家长陪同下观看。</view>
+        </view>
+
+    </view>
+</view>
+
+
+
+

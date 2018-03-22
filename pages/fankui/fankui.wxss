@@ -1,0 +1,44 @@
+.error{
+    padding: 50rpx 36rpx;
+background:rgba(247,247,247,1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #dddddd;
+}
+textarea{
+    height: 364rpx;
+    width: 100%;
+    display: block;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #222222;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.num{
+  font-size: 24rpx;
+  line-height: 64rpx;
+  color: #b7b7b7;
+  display: block;
+  text-align: right;
+    padding-right:20rpx;
+
+}
+.sub_btn{
+    margin-top: 48rpx;
+    border-radius: 6rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background-color: #4fd1e4;
+}
+
+
+.section_gap{
+    background-color: #fff;
+    border-radius: 8rpx;
+    border: 1px solid #dddddd;
+}

@@ -1,0 +1,47 @@
+.page{
+  padding: 0 36rpx;
+  border-top: 1px solid #EEEEEE;
+}
+.page .item{
+  position: relative;
+}
+
+.page .item:nth-last-child(1){
+  border-bottom:1rpx solid #F2F2F2;
+
+}
+.page .item .title{
+  font-size: 30rpx;
+  color: #666;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-top: 1rpx solid #F2F2F2;
+}
+.page .item:first-child .title{
+  border: none;
+}
+.page .item.active .con{
+  display: block;
+}
+.page .item .con{
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding: 20rpx 0;
+  color: #666;
+  display: none;
+  border-top: 1rpx solid #F2F2F2;
+}
+.page .item.active image{
+  top: inherit;
+  margin-top: inherit;
+  bottom: 30rpx;
+  transform: rotate(180deg);
+}
+.page .item image{
+  position: absolute;
+  width: 18rpx;
+  height: 12rpx;
+  right: 0;
+  top: 50%;
+  margin-top: -6rpx;
+}

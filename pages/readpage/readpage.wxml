@@ -1,0 +1,137 @@
+<import src="../common/tips.wxml"/>
+<template is="tip1" wx:if="{{!!tip1Data.con}}" data="{{...tip1Data}}"/>
+<template is="tip2" wx:if="{{!!conData.con}}" data="{{...conData}}" /> 
+<template is="tip3" wx:if="{{!!conData1.con}}" data="{{...conData1}}" /> 
+
+<view class='noNetwork' wx:if="{{false}}">
+  <view>点击加载</view>
+</view>
+
+<view class="sidewaysBox" bindtap='isshowmenu' wx:if="{{!!tempOptions.scrolltype}}" bindtouchstart="touchstart" bindtouchend="touchend">
+  <swiper current="{{current}}" bindchange="slideChange">
+    <block wx:for="{{imgUrls}}" wx:key>
+      <swiper-item>
+        <image src="{{item.url}}" lazy-load='true' binderror="imgload" data-index="{{index}}" mode="widthFix" class="slide-image simg"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='curNameBox'>第{{tempOptions.sortorder}}话 <text>{{current+1}}</text>/<text>{{imgUrls.length}}</text></view>
+</view>
+
+<view class='verticalBox' bindtap='isshowmenu' wx:if="{{!tempOptions.scrolltype}}">
+    <view class='curNameBox'>第{{tempOptions.curPage||1}}话</view>
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <block wx:for="{{imgUrls}}" wx:key>
+      <image src="{{item.url}}" lazy-load='true' binderror="imgload" data-index="{{index}}" mode="widthFix" class="slide-image vimg"/>
+    </block>
+    <view class='updateTime' wx:if="{{!book_info.next_page&&isShowbottom}}">
+      <view class='nowan'>未完待续～</view>
+      <view class='time'>每{{book_info.gengxin}}更新</view>
+    </view>
+    <view class='bgf7 linH' wx:if="{{isShowbottom}}"></view>
+    <view class='liketitle' wx:if="{{isShowbottom}}"><image src="../../images/like_bg.png"></image>{{likedata.classify_name}}</view>
+    <view class='likeBox clearfix' wx:if="{{isShowbottom}}">
+      <view catchtap="jumpUrl" data-url="../bookinfo/bookinfo?book_id={{item.book_id}}" class="tabCont_single" wx:key wx:for="{{likedata.data}}">
+        <image class="tab_single_pic" src="{{item.logo}}"></image>
+        <view class="tab_single_title">{{item.book_title}}</view>
+        <view class="tab_single_update"></view>
+        <view class="isUpdate" wx:if="{{!!item.is_new}}">更新</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='bottomMenuBox clearfix' wx:if="{{!!showBottomMenu}}">
+  <view wx:if="{{book_info.type_id!=3}}" bindtap='changeScrollType'>
+    <view wx:if="{{!!tempOptions.scrolltype}}">
+      <image class="img1" src='../../images/huadong_bg1.png'></image>
+      <text>开启滑动</text>
+    </view>
+    <view wx:if="{{!tempOptions.scrolltype}}">
+      <image class="img1 tran" src='../../images/huadong_bg1.png'></image>
+      <text>开启滚动</text>
+    </view>
+  </view>
+  <view class='active' wx:else bindtap='notxt' data-title='此漫画是条漫呢'>
+    <image class="img1 dis" src='../../images/huadong_bg2.png'></image>
+    <text class='dis'>禁止滑动</text>
+  </view>
+  <view bindtap='jumpmulu'>
+    <image class="img2" src='../../images/mulu_bg1.png'></image>
+    <text>目录</text>
+  </view>
+  <view bindtap='shoucang' class="{{!!book_info.is_collection?'active':''}}">
+    <image class="img3" src='../../images/shoucang_bg1.png'></image>
+    <image class="img3 dis" src='../../images/shoucang_bg2.png'></image>
+    <text>收藏</text>
+    <text class='dis'>已收藏</text>
+  </view>
+  <block wx:if="{{!!book_info.prev_page}}">
+    <view class='{{!book_info.prev_page?"active":""}}'>
+      <navigator url="../readpage/readpage?book_id={{tempOptions.book_id}}&sortorder={{book_info.prev_page}}&scrolltype={{tempOptions.scrolltype}}" open-type="redirectTo">
+        <image class="img4" src='../../images/prev_bg1.png'></image>
+        <text>上一话</text>
+      </navigator>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='{{!book_info.prev_page?"active":""}}' bindtap='notxt' data-title='没有上一话哦'>
+      <image class="img4 dis" src='../../images/prev_bg2.png'></image>
+      <text class='dis'>上一话</text>
+    </view>
+  </block>
+  <block wx:if="{{!!book_info.next_page}}">
+    <view class='{{!book_info.next_page?"active":""}}'>
+      <navigator url="../readpage/readpage?book_id={{tempOptions.book_id}}&sortorder={{book_info.next_page}}&scrolltype={{tempOptions.scrolltype}}" open-type="redirectTo">
+        <image class="img4 img5" src='../../images/prev_bg1.png'></image>
+        <text>下一话</text>
+      </navigator>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='{{!book_info.next_page?"active":""}}' bindtap='notxt' data-title='漫画还没有更新' wx:if="{{!book_info.next_page}}">
+      <image class="img4 img5 dis" src='../../images/prev_bg2.png'></image>
+      <text class='dis'>下一话</text>
+    </view>
+    <view class='{{!book_info.next_page?"active":""}}' bindtap='notxt' data-title='漫画已经完结了，看点别的吧' wx:else>
+      <image class="img4 img5 dis" src='../../images/prev_bg2.png'></image>
+      <text class='dis'>下一话</text>
+    </view>
+  </block>
+</view>
+
+<view class='autoBuyBox' wx:if="{{!!isShowbuy}}" data-set="pro">
+  <view class='closeBox' bindtap='hideBuy'></view>
+  <image src="../../images/autoBuy_bg.png" class='bgImg'></image>
+  <view class='conBox'>
+    <view class="curpay">支付<text>{{buyMoreList[0].total_money}}</text>金币</view>
+    <navigator wx:if="{{!!isShowbuyName}}" url="../chonZhi/chonZhi?sortorder={{tempOptions.sortorder}}&bookid={{tempOptions.book_id}}" class='buy_btn' open-type="redirectTo">囊中羞涩，请充值</navigator>
+    <view class="buy_btn" bindtap='buynow' wx:if="{{!isShowbuyName}}">立即购买</view>
+    <view class='clearfix yueBox'>
+      <view class='fl'>余额<text class='txt1'>{{userInfo.total_coin}}</text><text class='txt2'>金币</text></view>
+      <view class='fr' bindtap='autobuyf' wx:if="{{false}}"><image src="../../images/buy_def.png" wx:if="{{!userInfo.auto_pay}}"></image><image src="../../images/buy_active.png" wx:if="{{!!userInfo.auto_pay}}"></image>自动购买下一话</view>
+    </view>
+  </view>
+</view>
+
+
+
+<!--好友助力-->
+<view class="cover2" wx:if="{{showOne}}">
+  <view class="zhuLi">
+    <view class="zhuLi_one">
+      <view class="zhuLi_one_title" style="font-size:32rpx">好友助力</view>
+      <view style="margin-top: 95rpx;">活动一，收费章节免费读：</view>
+      <view>转发至微信好友，可免费解锁该本漫画付费章节，每次分享解锁1章，每日最多解锁2章。</view>
+      <view>活动二，好友助力，五折优惠：</view>
+      <view>转发小程序书籍页面，并邀请好友点击，即可额外获得付费章节的五折优惠。有多少位好友为您点击助力 ，就可以获得多少付费章节的五折优惠。当日助力，仅限当日使用。</view>
+      <view>该活动的解释权归草莓漫画所有。</view>
+    </view>
+    <button open-type="share" class="zhuLi_wechat">转发至微信好友</button>
+    <view catchtap="haveMoney" class="zhuLi_no">有钱任性不转发</view>
+    <view class="zhuLi_close" catchtap="close">
+      <image class="zhuLi_close_pic" src="../../images/close_next.png"></image>
+    </view>
+  </view>
+
+</view>
