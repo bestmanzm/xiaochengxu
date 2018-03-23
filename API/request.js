@@ -2,7 +2,7 @@ var util = require('../utils/util');
 var md5 = require('../utils/md5.js');
 
 function newWork(options) {
-    var tempOptions = {
+    var tempOptions = { 
         url: options.url || '',
         data: options.data || {},
         header: options.header || {'content-type': 'application/json'},
